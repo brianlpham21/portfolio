@@ -11,8 +11,7 @@ body {
   line-height: 1.5;
 }
 
-nav,
-footer {
+nav, footer {
   padding: 1% 0;
   background-color: #aaa;
 }
@@ -24,8 +23,6 @@ nav {
   right: 0;
   z-index: 10;
 }
-
-
 
 header {
   padding: 12% 0;
