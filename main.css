@@ -28,7 +28,6 @@ nav * {
 
 .nav-main-name {
   letter-spacing: 3px;
-  font-weight: lighter;
   font-size: 25px
 }
 
@@ -58,7 +57,7 @@ nav * {
 
 .nav-icon-text {
   padding: 0 8px;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 header {
@@ -85,7 +84,7 @@ section:nth-child(even) {
 }
 
 .section-title {
-  font-weight: lighter;
+  font-weight: normal;
   letter-spacing: 2px
 }
 
@@ -162,7 +161,13 @@ section:nth-child(even) {
 	100% { opacity: 1; }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 575px) {
+  .nav-icons {
+    display: none
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 900px) {
   .nav-icon-text {
     display: none
   }
