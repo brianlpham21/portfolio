@@ -28,7 +28,7 @@ $(window).scroll(function() {
 });
 
 $(window).scroll(function() {
-  $('header').css('opacity', 1 - $(window).scrollTop() / 300);
+  $('header').css('opacity', 1 - $(window).scrollTop() / 500);
 });
 
 let background_image_parallax = function($object, multiplier) {
@@ -48,26 +48,32 @@ background_image_parallax($("header"));
 
 $('#work').mouseover(function() {
   $('.work-icon').css({'filter': 'drop-shadow(0 0 3px #a3a3a3)', 'transition': '0.5s'});
+  $('.work-section-title').css({'text-shadow': '0 0 1px dimGrey', 'transition': '0.5s'});
 });
 
 $('#work').mouseout(function() {
   $('.work-icon').css('filter', 'none');
+  $('.work-section-title').css('text-shadow', 'none');
 });
 
 $('#skills').mouseover(function() {
   $('.skills-icon').css({'filter': 'drop-shadow(0 0 3px grey)', 'transition': '0.5s'});
+  $('.skills-section-title').css({'text-shadow': '0 0 1px dimGrey', 'transition': '0.5s'});
 });
 
 $('#skills').mouseout(function() {
   $('.skills-icon').css('filter', 'none');
+  $('.skills-section-title').css('text-shadow', 'none');
 });
 
 $('#about').mouseover(function() {
   $('.about-icon').css({'filter': 'drop-shadow(0 0 3px #4c4c4c)', 'transition': '0.5s'});
+  $('.about-section-title').css({'text-shadow': '0 0 1px dimGrey', 'transition': '0.5s'});
 });
 
 $('#about').mouseout(function() {
   $('.about-icon').css('filter', 'none');
+  $('.about-section-title').css('text-shadow', 'none');
 });
 
 $(window).scroll(function() {

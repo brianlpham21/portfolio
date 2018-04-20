@@ -60,6 +60,10 @@ nav * {
   font-size: 15px;
 }
 
+main {
+  background-color: #f7f7f7
+}
+
 header {
   background-image: url('https://static1.squarespace.com/static/5217d0f5e4b07c5692c2b65c/t/598ea595f9a61edf2e24270d/1502520728112/coverbanner-03.png?format=2500w');
   height: 600px;
@@ -76,7 +80,15 @@ hr:last-of-type {
 }
 
 .section-icon {
-  padding-right: 15px;
+  padding-right: 10px;
+  margin-right: 20px
+}
+
+.work-section-title, .skills-section-title, .about-section-title {
+  margin-bottom: 20px;
+  font-weight: normal;
+  letter-spacing: 2px;
+  font-size: 45px
 }
 
 section {
@@ -89,12 +101,6 @@ section {
   text-align: left;
   margin: auto;
   padding: 0 60px
-}
-
-.section-title {
-  font-weight: normal;
-  letter-spacing: 2px;
-  font-size: 40px
 }
 
 .footer-container {
