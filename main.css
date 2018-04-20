@@ -62,18 +62,26 @@ nav * {
 
 header {
   background-image: url('https://static1.squarespace.com/static/5217d0f5e4b07c5692c2b65c/t/598ea595f9a61edf2e24270d/1502520728112/coverbanner-03.png?format=2500w');
-  height: 500px;
+  height: 600px;
   background-position: center;
 }
 
-section {
-  background-color: #bbb;
-  min-height: 400px;
-  padding: 40px 0;
+hr {
+  width: 70%;
+  margin: auto
 }
 
-section:nth-child(even) {
-  background-color: #ddd;
+hr:last-of-type {
+  width: 100%
+}
+
+.section-icon {
+  padding-right: 15px;
+}
+
+section {
+  min-height: 400px;
+  padding: 60px 0;
 }
 
 .section-container {
@@ -85,7 +93,8 @@ section:nth-child(even) {
 
 .section-title {
   font-weight: normal;
-  letter-spacing: 2px
+  letter-spacing: 2px;
+  font-size: 40px
 }
 
 .footer-container {
