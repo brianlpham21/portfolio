@@ -12,7 +12,7 @@ $(window).scroll(function() {
     $('nav').css({'padding': '10px 0', 'transition': '0.5s'});
   }
   else if ($(window).scrollTop() < $('section').offset().top - 80) {
-    $('.nav-main-name').css({'font-size': '20px', 'transition': '0.25s'});
+    $('.nav-main-name').css({'font-size': '25px', 'transition': '0.25s'});
     $('.nav-icon-item').css({'opacity': '1', 'transition': '0.5s'});
     $('nav').css({'padding': '20px 0', 'transition': '0.5s'});
   }
@@ -45,6 +45,12 @@ let background_image_parallax = function($object, multiplier){
 };
 
 background_image_parallax($("header"));
+
+$(window).scroll(function() {
+  if ((($(window).scrollTop() + $(window).height()) - 100) >= $('footer').offset().top) {
+    $('.footer-container').css({'opacity': '1', 'transition': '3s'});
+  }
+});
 
 $('.scroll-up-arrow').click(function(){
   $('html, body').animate({

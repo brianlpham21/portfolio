@@ -4,7 +4,7 @@
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-size: 20px;
   text-align: center;
 }
@@ -26,6 +26,12 @@ nav * {
   display: inline-block;
 }
 
+.nav-main-name {
+  letter-spacing: 3px;
+  font-weight: lighter;
+  font-size: 25px
+}
+
 .nav-main-name:hover {
   cursor: pointer;
 }
@@ -36,7 +42,7 @@ nav * {
 }
 
 .nav-icon-item {
-  padding-right: 12px;
+  padding-right: 16px;
 }
 
 .nav-icon-item:hover {
@@ -64,11 +70,23 @@ header {
 section {
   background-color: #bbb;
   min-height: 400px;
-  padding: 20px 0;
+  padding: 40px 0;
 }
 
 section:nth-child(even) {
   background-color: #ddd;
+}
+
+.section-container {
+  max-width: 1000px;
+  text-align: left;
+  margin: auto;
+  padding: 0 60px
+}
+
+.section-title {
+  font-weight: lighter;
+  letter-spacing: 2px
 }
 
 .footer-container {
@@ -76,6 +94,7 @@ section:nth-child(even) {
   text-align: left;
   margin: auto;
   padding: 20px 60px 0 60px;
+  opacity: 0
 }
 
 .social-media-icons {
@@ -84,7 +103,8 @@ section:nth-child(even) {
 }
 
 .social-media-icons a {
-  color: #505050
+  color: #505050;
+  margin-right: 5px
 }
 
 .social-media-icons a:hover {
@@ -95,7 +115,8 @@ section:nth-child(even) {
 
 .footer-main-name {
   padding: 30px 0;
-  font-size: 18px;
+  font-size: 16px;
+  letter-spacing: 1px
 }
 
 .scroll-up-arrow {
@@ -110,10 +131,10 @@ section:nth-child(even) {
 
 .fa-pulse {
 	display: inline-block;
-	-moz-animation: pulse 4s infinite linear;
-	-o-animation: pulse 4s infinite linear;
-	-webkit-animation: pulse 4s infinite linear;
-	animation: pulse 4s infinite linear;
+	-moz-animation: pulse 3.25s infinite linear;
+	-o-animation: pulse 3.25s infinite linear;
+	-webkit-animation: pulse 3.25s infinite linear;
+	animation: pulse 3.25s infinite linear;
 }
 @-webkit-keyframes pulse {
 	0% { opacity: 1; }
