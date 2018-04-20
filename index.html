@@ -3,15 +3,24 @@
   <head>
     <title>Brian Pham</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.css">
     <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="icon" href="./images/favicon-bold.ico">
     <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
   </head>
   <body>
-    <nav role="navigation">Brian Pham</nav>
+    <nav role="navigation">
+      <span class='nav-main-name'>Brian Pham</span>
+      <ul class='nav-icons'>
+        <li class='nav-icon-item'>
+          <a href='https://www.linkedin.com/in/blpham' target='_blank'><i class="fab fa-linkedin-in fa-lg" data-fa-transform="shrink-7" data-fa-mask="fas fa-circle"></i><span class='nav-icon-text'>LinkedIn</span></a>
+        </li>
+        <li class='nav-icon-item'>
+          <a href='https://www.github.com/brianlpham21' target='_blank'><i class="fab fa-github fa-lg"></i><span class='nav-icon-text'>GitHub</span></a>
+        </li>
+      </ul>
+    </nav>
 
-    <main role="main">
+    <main role="main" id='main'>
       <header role="banner">
       </header>
       <section>
@@ -26,13 +35,16 @@
     </main>
 
     <footer role="content-info">
-      Brian Pham &copy; 2018
-      <div class='social-media-icons'>
-        <i class="fab fa-twitter fa-2x" data-fa-transform="shrink-7" data-fa-mask="fas fa-circle"></i>
-        <i class="fab fa-linkedin-in fa-2x" data-fa-transform="shrink-7" data-fa-mask="fas fa-circle"></i>
-        <i class="far fa-envelope fa-2x" data-fa-transform="shrink-7" data-fa-mask="fas fa-circle"></i>
-        <i class="fab fa-github fa-2x"></i>
-      </div>
+      <div class='footer-container'>
+        <div class='social-media-icons'>
+          <a href='mailto:brianlpham21@gmail.com'><i class="far fa-envelope fa-lg" data-fa-transform="shrink-7" data-fa-mask="fas fa-circle"></i></a>
+          <a href='https://www.linkedin.com/in/blpham' target='_blank'><i class="fab fa-linkedin-in fa-lg" data-fa-transform="shrink-7" data-fa-mask="fas fa-circle"></i></a>
+          <a href='https://www.github.com/brianlpham21' target='_blank'><i class="fab fa-github fa-lg"></i></a>
+          <a href='https://www.twitter.com/brianlpham21' target='_blank'><i class="fab fa-twitter fa-lg" data-fa-transform="shrink-6 down-0.3" data-fa-mask="fas fa-circle"></i></a>
+        </div>
+        <div class='scroll-up-arrow'><i class="fas fa-angle-up fa-2x fa-pulse"></i></div>
+        <div class='footer-main-name'>Brian Pham &copy; 2018</div>
+      <div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
