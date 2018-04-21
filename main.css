@@ -55,7 +55,7 @@ nav * {
 
 .nav-icons {
   position: absolute;
-  right: 50px;
+  right: 100px;
 }
 
 .nav-icon-item {
@@ -78,6 +78,24 @@ nav * {
   font-size: 15px;
 }
 
+.hidden-nav-icon-item {
+  padding-right: 10px;
+}
+
+.hidden-nav-icon-item a {
+  color: #505050;
+}
+
+.hidden-nav-icon-item:hover {
+  cursor: pointer;
+  opacity: 0.5 !important;
+  transition: 0.4s !important
+}
+
+.last-hidden {
+  margin-right: 150px
+}
+
 main {
   background-color: #f7f7f7
 }
@@ -88,13 +106,13 @@ header {
   background-position: center;
 }
 
-hr {
+.section-divider {
   width: 70%;
   margin: auto
 }
 
-hr:last-of-type {
-  width: 100%
+.footer-divider {
+  width: 100%;
 }
 
 .section-icon {
@@ -121,15 +139,41 @@ section {
   padding: 0 60px
 }
 
+.application-divider {
+  margin: 40px auto;
+  opacity: 0.4;
+  width: 75%
+}
+
 .application-title {
   font-weight: normal;
   padding-top: 20px
 }
 
 .application-image {
-  display: block;
+  display: inline-block;
   height: 300px;
   padding: 20px;
+}
+
+.application-details {
+  display: inline-block;
+  float: right;
+  list-style-type: none;
+  margin-top: 40px;
+  margin-right: 100px;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  font-size: 26px;
+}
+
+.application-details li {
+  padding: 5px 0
+}
+
+.application-description {
+  font-size: 18px;
+
 }
 
 .footer-container {
@@ -203,6 +247,21 @@ section {
 	0% { opacity: 1; }
 	50% { opacity: 0; }
 	100% { opacity: 1; }
+}
+
+img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+img:hover {
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+.hidden {
+  display: none
 }
 
 @media only screen and (max-width: 575px) {
