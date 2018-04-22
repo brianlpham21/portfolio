@@ -147,7 +147,7 @@ section {
 
 .application-title {
   font-weight: normal;
-  padding-top: 20px
+  padding-top: 10px
 }
 
 .application-image {
@@ -173,7 +173,12 @@ section {
 
 .application-description {
   font-size: 18px;
+}
 
+.skill-section {
+  background-color: silver;
+  margin: 20px;
+  padding: 10px
 }
 
 .footer-container {
