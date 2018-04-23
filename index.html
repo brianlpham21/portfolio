@@ -44,7 +44,7 @@
           <h2 class='work-section-title'><i class="far fa-list-alt fa-lg section-icon work-icon"></i>WORK</h2>
           <div class='app-section'>
             <h3 class='application-title'>Marvel Character Search</h3>
-            <a href='https://brianlpham21.github.io/marvel-character-search/' target='_blank'><img src='./images/marvel-character-search.png' alt='marvel character search application' class='application-image' /></a>
+            <figure><a href='https://brianlpham21.github.io/marvel-character-search/' target='_blank'><img src='./images/marvel-character-search.png' alt='marvel character search application' class='application-image' /></a></figure>
             <ul class='application-details'>
               <li>Open API Use</li>
               <li>jQuery Traversal</li>
@@ -56,7 +56,7 @@
           <hr class='application-divider'>
           <div class='app-section'>
             <h3 class='application-title'>Beer Index</h3>
-            <a href='https://stark-woodland-22950.herokuapp.com/' target='_blank'><img src='./images/beer-index.png' alt='beer index application' class='application-image' /></a>
+            <figure><a href='https://stark-woodland-22950.herokuapp.com/' target='_blank'><img src='./images/beer-index.png' alt='beer index application' class='application-image' /></a></figure>
             <ul class='application-details'>
               <li>Node.js</li>
               <li>Express</li>
@@ -68,7 +68,7 @@
           <hr class='application-divider'>
           <div class='app-section'>
             <h3 class='application-title'>Training Tracker</h3>
-            <a href='https://determined-hermann-abe2c5.netlify.com/' target='_blank'><img src='./images/training-tracker.png' alt='training tracker application' class='application-image' /></a>
+            <figure><a href='https://determined-hermann-abe2c5.netlify.com/' target='_blank'><img src='./images/training-tracker.png' alt='training tracker application' class='application-image' /></a></figure>
             <ul class='application-details'>
               <li>React & Redux</li>
               <li>Node.Js & Express</li>
@@ -85,9 +85,10 @@
       <section id='skills'>
         <div class='section-container'>
           <h2 class='skills-section-title'><i class="fas fa-code section-icon skills-icon"></i>SKILLS</h2>
-          <div class='skill-section'>
+          <div class='skill-section front-end-skill-section'>
+            <i class='fas fa-desktop fa-3x skill-icon front-end-skill-icon'></i>
             <h3 class='skill-title'>Front-End Development</h3>
-            <ul>
+            <ul class='skill-list'>
               <li>HTML5</li>
               <li>CSS3</li>
               <li>JavaScript</li>
@@ -95,39 +96,57 @@
               <li>ES6</li>
               <li>React</li>
             </ul>
+            <p class='skill-description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies scelerisque sem, at posuere lectus hendrerit quis. Pellentesque erat leo, placerat sed nisl ac, fringilla lobortis enim. Suspendisse sem nunc, placerat pulvinar nulla quis, efficitur tempus justo. Fusce justo magna, tempus ac finibus ut, efficitur vitae leo. Proin aliquet lectus nisi, nec ullamcorper lorem sodales ac. Quisque rhoncus urna odio, laoreet tincidunt tellus congue nec.</p>
           </div>
-          <div class='skill-section'>
+          <div class='skill-section back-end-skill-section'>
+            <i class='fas fa-server fa-3x skill-icon back-end-skill-icon'></i>
             <h3 class='skill-title'>Back-End Development</h3>
-            <li>RESTful APIs</li>
-            <li>Node.js</li>
-            <li>Express</li>
-            <li>MongoDB</li>
-            <li>Mongoose</li>
+            <ul class='skill-list'>
+              <li>RESTful APIs</li>
+              <li>Node.js</li>
+              <li>Express</li>
+              <li>MongoDB</li>
+              <li>Mongoose</li>
+            </ul>
+            <p class='skill-description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies scelerisque sem, at posuere lectus hendrerit quis. Pellentesque erat leo, placerat sed nisl ac, fringilla lobortis enim. Suspendisse sem nunc, placerat pulvinar nulla quis, efficitur tempus justo. Fusce justo magna, tempus ac finibus ut, efficitur vitae leo. Proin aliquet lectus nisi, nec ullamcorper lorem sodales ac. Quisque rhoncus urna odio, laoreet tincidunt tellus congue nec.</p>
           </div>
-          <div class='skill-section'>
-            <h3 class='skill-title'>Authentication</h3>
-            <li>Passport.js</li>
-            <li>bcrypt</li>
-          </div>
-          <div class='skill-section'>
+          <div class='skill-section development-skill-section'>
+            <i class='far fa-keyboard fa-3x skill-icon development-skill-icon'></i>
             <h3 class='skill-title'>Development Environment</h3>
-            <li>repl.it IDE</li>
-            <li>Chrome DevTools</li>
-            <li>command-line</li>
-            <li>Git</li>
-            <li>npm</li>
-            <li>Webpack</li>
-            <li>Mocha</li>
-            <li>Chai</li>
-            <li>Travis CI</li>
-            <li>Heroku</li>
-            <li>Netlify</li>
+            <ul class='skill-list'>
+              <li>repl.it IDE</li>
+              <li>Chrome DevTools</li>
+              <li>command-line</li>
+              <li>Git</li>
+              <li>npm</li>
+              <li>Webpack</li>
+              <li>Mocha</li>
+              <li>Chai</li>
+              <li>Travis CI</li>
+              <li>Heroku</li>
+              <li>Netlify</li>
+            </ul>
+            <p class='skill-description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies scelerisque sem, at posuere lectus hendrerit quis. Pellentesque erat leo, placerat sed nisl ac, fringilla lobortis enim. Suspendisse sem nunc, placerat pulvinar nulla quis, efficitur tempus justo. Fusce justo magna, tempus ac finibus ut, efficitur vitae leo. Proin aliquet lectus nisi, nec ullamcorper lorem sodales ac. Quisque rhoncus urna odio, laoreet tincidunt tellus congue nec.</p>
           </div>
-          <div class='skill-section'>
+          <div class='skill-section authentication-skill-section'>
+            <i class='fas fa-lock fa-3x skill-icon authentication-skill-icon'></i>
+            <h3 class='skill-title'>Authentication</h3>
+            <ul class='skill-list'>
+              <li>Passport.js</li>
+              <li>bcrypt</li>
+            </ul>
+            <p class='skill-description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies scelerisque sem, at posuere lectus hendrerit quis. Pellentesque erat leo, placerat sed nisl ac, fringilla lobortis enim. Suspendisse sem nunc, placerat pulvinar nulla quis, efficitur tempus justo. Fusce justo magna, tempus ac finibus ut, efficitur vitae leo. Proin aliquet lectus nisi, nec ullamcorper lorem sodales ac. Quisque rhoncus urna odio, laoreet tincidunt tellus congue nec.</p>
+          </div>
+          <div class='skill-section architecture-skill-section'>
+            <i class='fas fa-clipboard-list fa-3x skill-icon architecture-skill-icon'></i>
             <h3 class='skill-title'>Architecture Principles</h3>
-            <li>Responsive Web Design</li>
-            <li>Mobile-First Development</li>
-            <li>Cross-Browser Compatibility</li>
+            <ul class='skill-list'>
+              <li>Responsive Web Design</li>
+              <li>Mobile-First Development</li>
+              <li>Accessibility</li>
+              <li>Cross-Browser Compatibility</li>
+            </ul>
+            <p class='skill-description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies scelerisque sem, at posuere lectus hendrerit quis. Pellentesque erat leo, placerat sed nisl ac, fringilla lobortis enim. Suspendisse sem nunc, placerat pulvinar nulla quis, efficitur tempus justo. Fusce justo magna, tempus ac finibus ut, efficitur vitae leo. Proin aliquet lectus nisi, nec ullamcorper lorem sodales ac. Quisque rhoncus urna odio, laoreet tincidunt tellus congue nec.</p>
           </div>
         </div>
       </section>
@@ -139,15 +158,19 @@
           <h2 class='about-section-title'><i class="far fa-comment fa-lg section-icon about-icon"></i>ABOUT</h2>
           <div class='about-section'>
             <h3 class='about-title'>Design</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies scelerisque sem, at posuere lectus hendrerit quis. Pellentesque erat leo, placerat sed nisl ac, fringilla lobortis enim. Suspendisse sem nunc, placerat pulvinar nulla quis, efficitur tempus justo. Fusce justo magna, tempus ac finibus ut, efficitur vitae leo. Proin aliquet lectus nisi, nec ullamcorper lorem sodales ac. Quisque rhoncus urna odio, laoreet tincidunt tellus congue nec.</p>
+            <p class='about-description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies scelerisque sem, at posuere lectus hendrerit quis. Pellentesque erat leo, placerat sed nisl ac, fringilla lobortis enim. Suspendisse sem nunc, placerat pulvinar nulla quis, efficitur tempus justo. Fusce justo magna, tempus ac finibus ut, efficitur vitae leo. Proin aliquet lectus nisi, nec ullamcorper lorem sodales ac. Quisque rhoncus urna odio, laoreet tincidunt tellus congue nec.</p>
           </div>
           <div class='about-section'>
             <h3 class='about-title'>Problem Solving</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies scelerisque sem, at posuere lectus hendrerit quis. Pellentesque erat leo, placerat sed nisl ac, fringilla lobortis enim. Suspendisse sem nunc, placerat pulvinar nulla quis, efficitur tempus justo. Fusce justo magna, tempus ac finibus ut, efficitur vitae leo. Proin aliquet lectus nisi, nec ullamcorper lorem sodales ac. Quisque rhoncus urna odio, laoreet tincidunt tellus congue nec.</p>
+            <p class='about-description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies scelerisque sem, at posuere lectus hendrerit quis. Pellentesque erat leo, placerat sed nisl ac, fringilla lobortis enim. Suspendisse sem nunc, placerat pulvinar nulla quis, efficitur tempus justo. Fusce justo magna, tempus ac finibus ut, efficitur vitae leo. Proin aliquet lectus nisi, nec ullamcorper lorem sodales ac. Quisque rhoncus urna odio, laoreet tincidunt tellus congue nec.</p>
+          </div>
+          <div class='about-section'>
+            <h3 class='about-title'>Time Management</h3>
+            <p class='about-description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies scelerisque sem, at posuere lectus hendrerit quis. Pellentesque erat leo, placerat sed nisl ac, fringilla lobortis enim. Suspendisse sem nunc, placerat pulvinar nulla quis, efficitur tempus justo. Fusce justo magna, tempus ac finibus ut, efficitur vitae leo. Proin aliquet lectus nisi, nec ullamcorper lorem sodales ac. Quisque rhoncus urna odio, laoreet tincidunt tellus congue nec.</p>
           </div>
           <div class='about-section'>
             <h3 class='about-title'>Creativity</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies scelerisque sem, at posuere lectus hendrerit quis. Pellentesque erat leo, placerat sed nisl ac, fringilla lobortis enim. Suspendisse sem nunc, placerat pulvinar nulla quis, efficitur tempus justo. Fusce justo magna, tempus ac finibus ut, efficitur vitae leo. Proin aliquet lectus nisi, nec ullamcorper lorem sodales ac. Quisque rhoncus urna odio, laoreet tincidunt tellus congue nec.</p>
+            <p class='about-description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies scelerisque sem, at posuere lectus hendrerit quis. Pellentesque erat leo, placerat sed nisl ac, fringilla lobortis enim. Suspendisse sem nunc, placerat pulvinar nulla quis, efficitur tempus justo. Fusce justo magna, tempus ac finibus ut, efficitur vitae leo. Proin aliquet lectus nisi, nec ullamcorper lorem sodales ac. Quisque rhoncus urna odio, laoreet tincidunt tellus congue nec.</p>
           </div>
         </div>
       </section>

@@ -45,7 +45,7 @@ let background_image_parallax = function($object, multiplier) {
 
 	$(window).scroll(function() {
 	  let from_top = $doc.scrollTop(),
-	      bg_css = 'center ' +(multiplier * from_top - 60) + 'px';
+	      bg_css = 'center ' +(multiplier * from_top) + 'px';
 	  $object.css({"background-position": bg_css });
   });
 };
@@ -82,6 +82,46 @@ $('#about').mouseout(function() {
   $('.about-section-title').css('text-shadow', 'none');
 });
 
+$('.front-end-skill-section').mouseover(function() {
+  $('.front-end-skill-icon').css({'filter': 'drop-shadow(0 0 1px #4c4c4c)', 'transition': '0.5s'});
+});
+
+$('.front-end-skill-section').mouseout(function() {
+  $('.front-end-skill-icon').css('filter', 'none');
+});
+
+$('.back-end-skill-section').mouseover(function() {
+  $('.back-end-skill-icon').css({'filter': 'drop-shadow(0 0 1px #4c4c4c)', 'transition': '0.5s'});
+});
+
+$('.back-end-skill-section').mouseout(function() {
+  $('.back-end-skill-icon').css('filter', 'none');
+});
+
+$('.development-skill-section').mouseover(function() {
+  $('.development-skill-icon').css({'filter': 'drop-shadow(0 0 1px #4c4c4c)', 'transition': '0.5s'});
+});
+
+$('.development-skill-section').mouseout(function() {
+  $('.development-skill-icon').css('filter', 'none');
+});
+
+$('.authentication-skill-section').mouseover(function() {
+  $('.authentication-skill-icon').css({'filter': 'drop-shadow(0 0 1px #4c4c4c)', 'transition': '0.5s'});
+});
+
+$('.authentication-skill-section').mouseout(function() {
+  $('.authentication-skill-icon').css('filter', 'none');
+});
+
+$('.architecture-skill-section').mouseover(function() {
+  $('.architecture-skill-icon').css({'filter': 'drop-shadow(0 0 1px #4c4c4c)', 'transition': '0.5s'});
+});
+
+$('.architecture-skill-section').mouseout(function() {
+  $('.architecture-skill-icon').css('filter', 'none');
+});
+
 $(window).scroll(function() {
   if ((($(window).scrollTop() + $(window).height()) - 100) >= $('footer').offset().top) {
     $('.footer-container').css({'opacity': '1', 'transition': '3s'});
@@ -91,5 +131,5 @@ $(window).scroll(function() {
 $('.scroll-up-arrow').click(function() {
   $('html, body').animate({
       scrollTop: $(window.location.hash).offset().top + 'px'
-  }, 700);
+  }, 1500);
 });
