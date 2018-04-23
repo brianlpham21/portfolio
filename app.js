@@ -160,6 +160,6 @@ $(window).scroll(function() {
 
 $('.scroll-up-arrow').click(function() {
   $('html').animate({
-      scrollTop: $(window.location.hash).offset().top + 'px'
+      scrollTop: '0px'
   }, 1200);
 });
