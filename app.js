@@ -9,11 +9,13 @@ $(window).scroll(function() {
   if ($(window).scrollTop() >= $('section').offset().top - 80) {
     $('.nav-main-name').css({'font-size': '16px', 'transition': '0.25s'});
     $('.nav-icon-item').css({'opacity': '0', 'transition': '0.5s'});
+    $('.nav-mail-icon-text').css({'opacity': '0', 'transition': '0.5s'});
     $('nav').css({'padding': '10px 0', 'transition': '0.5s'});
   }
   else if ($(window).scrollTop() < $('section').offset().top - 80) {
     $('.nav-main-name').css({'font-size': '25px', 'transition': '0.25s'});
     $('.nav-icon-item').css({'opacity': '1', 'transition': '0.5s'});
+    $('.nav-mail-icon-text').css({'opacity': '1', 'transition': '0.5s'});
     $('nav').css({'padding': '20px 0', 'transition': '0.5s'});
   }
 });
@@ -21,6 +23,7 @@ $(window).scroll(function() {
 $(window).scroll(function() {
   if ($(window).scrollTop() >= $('section').offset().top + 100) {
     $('.nav-icon-item').css('display', 'none');
+    $('.nav-mail-icon-text').css('display', 'none');
     $('.hidden-nav-icon-item').removeClass('hidden');
     setTimeout(function() {
       $('.hidden-nav-icon-item').css({'opacity': '1', 'transition': '1s'});
@@ -28,6 +31,7 @@ $(window).scroll(function() {
   }
   else if ($(window).scrollTop() < $('section').offset().top + 100) {
     $('.nav-icon-item').css('display', 'inline-block');
+    $('.nav-mail-icon-text').css('display', 'inline-block');
     $('.hidden-nav-icon-item').addClass('hidden');
     $('.hidden-nav-icon-item').css('opacity', '0');
   }
@@ -91,43 +95,69 @@ $('.application-details li').mouseout(function() {
 });
 
 $('.front-end-skill-section').mouseover(function() {
-  $('.front-end-skill-icon').css({'filter': 'drop-shadow(0 0 1px #4c4c4c)', 'transition': '0.5s'});
+  $('.front-end-skill-icon').css({'filter': 'drop-shadow(0 0 1px #4c4c4c)','transition': '0.5s'});
+  $(this).css({'background-color': 'lightBlue', 'transition': '0.5s'});
+  $('.fa-html5').css({'color': '#E34C26', 'transition': '0.5s'});
+  $('.fa-css3-alt').css({'color': '#3B5998', 'transition': '0.5s'});
+  $('.fa-js-square').css({'color': '#F0DB4F', 'transition': '0.5s'});
+  $('.fa-react').css({'color': '#00d8ff', 'transition': '0.5s'});
 });
 
 $('.front-end-skill-section').mouseout(function() {
   $('.front-end-skill-icon').css('filter', 'none');
+  $(this).css({'background-color': '#e0e0e0', 'box-shadow': 'none', 'transition': '0.5s'});
+  $('.fa-html5').css({'color': '#444', 'transition': '0.5s'});
+  $('.fa-css3-alt').css({'color': '#444', 'transition': '0.5s'});
+  $('.fa-js-square').css({'color': '#444', 'transition': '0.5s'});
+  $('.fa-react').css({'color': '#444', 'transition': '0.5s'});
 });
 
 $('.back-end-skill-section').mouseover(function() {
   $('.back-end-skill-icon').css({'filter': 'drop-shadow(0 0 1px #4c4c4c)', 'transition': '0.5s'});
+  $(this).css({'background-color': '#b5dbe8', 'transition': '0.5s'});
 });
 
 $('.back-end-skill-section').mouseout(function() {
   $('.back-end-skill-icon').css('filter', 'none');
+  $(this).css({'background-color': '#e0e0e0', 'transition': '0.5s'});
 });
 
 $('.development-skill-section').mouseover(function() {
   $('.development-skill-icon').css({'filter': 'drop-shadow(0 0 1px #4c4c4c)', 'transition': '0.5s'});
+  $(this).css({'background-color': '#bddfeb', 'transition': '0.5s'});
 });
 
 $('.development-skill-section').mouseout(function() {
   $('.development-skill-icon').css('filter', 'none');
+  $(this).css({'background-color': '#e0e0e0', 'transition': '0.5s'});
 });
 
 $('.authentication-skill-section').mouseover(function() {
   $('.authentication-skill-icon').css({'filter': 'drop-shadow(0 0 1px #4c4c4c)', 'transition': '0.5s'});
+  $(this).css({'background-color': '#c5e3ed', 'transition': '0.5s'});
 });
 
 $('.authentication-skill-section').mouseout(function() {
   $('.authentication-skill-icon').css('filter', 'none');
+  $(this).css({'background-color': '#e0e0e0', 'transition': '0.5s'});
 });
 
 $('.architecture-skill-section').mouseover(function() {
   $('.architecture-skill-icon').css({'filter': 'drop-shadow(0 0 1px #4c4c4c)', 'transition': '0.5s'});
+  $(this).css({'background-color': '#cde7f0', 'transition': '0.5s'});
 });
 
 $('.architecture-skill-section').mouseout(function() {
   $('.architecture-skill-icon').css('filter', 'none');
+  $(this).css({'background': '#e0e0e0', 'transition': '0.5s'});
+});
+
+$('.about-section').mouseover(function() {
+  $(this).children('.about-title').css({'letter-spacing': '1px', 'transition': '0.5s'});
+});
+
+$('.about-section').mouseout(function() {
+  $(this).children('.about-title').css('letter-spacing', '0');
 });
 
 $(window).scroll(function() {
