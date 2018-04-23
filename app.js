@@ -159,7 +159,7 @@ $(window).scroll(function() {
 });
 
 $('.scroll-up-arrow').click(function() {
-  $('html, body').animate({
+  $('html').animate({
       scrollTop: $(window.location.hash).offset().top + 'px'
   }, 1200);
 });
