@@ -97,19 +97,11 @@ $('.application-details li').mouseout(function() {
 $('.front-end-skill-section').mouseover(function() {
   $('.front-end-skill-icon').css({'filter': 'drop-shadow(0 0 1px #4c4c4c)','transition': '0.5s'});
   $(this).css({'background-color': 'lightBlue', 'transition': '0.5s'});
-  $('.fa-html5').css({'color': '#E34C26', 'transition': '0.5s'});
-  $('.fa-css3-alt').css({'color': '#3B5998', 'transition': '0.5s'});
-  $('.fa-js-square').css({'color': '#F0DB4F', 'transition': '0.5s'});
-  $('.fa-react').css({'color': '#00d8ff', 'transition': '0.5s'});
 });
 
 $('.front-end-skill-section').mouseout(function() {
   $('.front-end-skill-icon').css('filter', 'none');
   $(this).css({'background-color': '#e0e0e0', 'box-shadow': 'none', 'transition': '0.5s'});
-  $('.fa-html5').css({'color': '#444', 'transition': '0.5s'});
-  $('.fa-css3-alt').css({'color': '#444', 'transition': '0.5s'});
-  $('.fa-js-square').css({'color': '#444', 'transition': '0.5s'});
-  $('.fa-react').css({'color': '#444', 'transition': '0.5s'});
 });
 
 $('.back-end-skill-section').mouseover(function() {
@@ -169,5 +161,5 @@ $(window).scroll(function() {
 $('.scroll-up-arrow').click(function() {
   $('html, body').animate({
       scrollTop: $(window.location.hash).offset().top + 'px'
-  }, 1500);
+  }, 1200);
 });
