@@ -179,7 +179,9 @@ figure {
 	padding: 0;
 	background: #fff;
 	overflow: hidden;
-  display: inline-block
+  display: inline-block;
+  border: 5px solid #555;
+  border-radius: 3px
 }
 
 .application-details {
@@ -187,9 +189,10 @@ figure {
   float: right;
   list-style-type: none;
   margin-top: 40px;
-  margin-right: 50px;
+  margin-right: 80px;
   font-weight: lighter;
   font-size: 26px;
+  text-align: right
 }
 
 .application-details li {

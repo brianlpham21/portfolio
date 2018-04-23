@@ -82,6 +82,14 @@ $('#about').mouseout(function() {
   $('.about-section-title').css('text-shadow', 'none');
 });
 
+$('.application-details li').mouseover(function() {
+  $(this).css({'letter-spacing': '1px', 'transition': '0.5s'});
+});
+
+$('.application-details li').mouseout(function() {
+  $(this).css('letter-spacing', '0');
+});
+
 $('.front-end-skill-section').mouseover(function() {
   $('.front-end-skill-icon').css({'filter': 'drop-shadow(0 0 1px #4c4c4c)', 'transition': '0.5s'});
 });
