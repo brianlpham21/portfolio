@@ -203,7 +203,7 @@ figure {
   list-style-type: none;
   margin-top: 40px;
   margin-right: 80px;
-  font-weight: lighter;
+  font-weight: normal;
   font-size: 26px;
   text-align: right
 }
@@ -214,6 +214,7 @@ figure {
 
 .application-description {
   font-size: 18px;
+  font-weight: lighter
 }
 
 /* SKILLS SECTION */
@@ -266,7 +267,7 @@ figure {
   margin: 6px 5px;
   padding: 8px 12px;
   border-radius: 10px;
-  font-weight: lighter
+  font-weight: normal
 }
 
 .skill-list li:hover {
@@ -275,7 +276,8 @@ figure {
 }
 
 .skill-description {
-  padding: 10px 0
+  padding: 10px 0;
+  font-weight: lighter
 }
 
 .front-end-icons, .back-end-icons, .development-icons {
@@ -326,7 +328,8 @@ figure {
 }
 
 .about-description {
-  padding: 20px 0
+  padding: 20px 0;
+  font-weight: lighter
 }
 
 /* FOOTER */
