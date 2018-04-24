@@ -96,55 +96,55 @@ $('.application-details li').mouseout(function() {
 
 $('.front-end-skill-section').mouseover(function() {
   $('.front-end-skill-icon').css({'filter': 'drop-shadow(0 0 1px #4c4c4c)','transition': '0.5s'});
-  $(this).css({'background-color': '#cde7f0', 'transition': '0.5s'});
+  $(this).css({'background-color': '#e5e8f7', 'transition': '0.5s'});
   $('.front-end-icons img').css({'filter': 'none', 'transition': '0.5s'});
 });
 
 $('.front-end-skill-section').mouseout(function() {
   $('.front-end-skill-icon').css('filter', 'none');
-  $(this).css({'background-color': '#e5e8f7', 'box-shadow': 'none', 'transition': '0.5s'});
+  $(this).css({'background-color': '#bac0d1', 'box-shadow': 'none', 'transition': '0.5s'});
 });
 
 $('.back-end-skill-section').mouseover(function() {
   $('.back-end-skill-icon').css({'filter': 'drop-shadow(0 0 1px #4c4c4c)', 'transition': '0.5s'});
-  $(this).css({'background-color': '#b5dbe8', 'transition': '0.5s'});
+  $(this).css({'background-color': '#e5e8f7', 'transition': '0.5s'});
   $('.back-end-icons img').css({'filter': 'none', 'transition': '0.5s'});
 });
 
 $('.back-end-skill-section').mouseout(function() {
   $('.back-end-skill-icon').css('filter', 'none');
-  $(this).css({'background-color': '#e5e8f7', 'transition': '0.5s'});
+  $(this).css({'background-color': '#bac0d1', 'transition': '0.5s'});
 });
 
 $('.development-skill-section').mouseover(function() {
   $('.development-skill-icon').css({'filter': 'drop-shadow(0 0 1px #4c4c4c)', 'transition': '0.5s'});
-  $(this).css({'background-color': '#bddfeb', 'transition': '0.5s'});
+  $(this).css({'background-color': '#e5e8f7', 'transition': '0.5s'});
   $('.development-icons img').css({'filter': 'none', 'transition': '0.5s'});
 });
 
 $('.development-skill-section').mouseout(function() {
   $('.development-skill-icon').css('filter', 'none');
-  $(this).css({'background-color': '#e5e8f7', 'transition': '0.5s'});
+  $(this).css({'background-color': '#bac0d1', 'transition': '0.5s'});
 });
 
 $('.authentication-skill-section').mouseover(function() {
   $('.authentication-skill-icon').css({'filter': 'drop-shadow(0 0 1px #4c4c4c)', 'transition': '0.5s'});
-  $(this).css({'background-color': '#c5e3ed', 'transition': '0.5s'});
+  $(this).css({'background-color': '#e5e8f7', 'transition': '0.5s'});
 });
 
 $('.authentication-skill-section').mouseout(function() {
   $('.authentication-skill-icon').css('filter', 'none');
-  $(this).css({'background-color': '#e5e8f7', 'transition': '0.5s'});
+  $(this).css({'background-color': '#bac0d1', 'transition': '0.5s'});
 });
 
 $('.architecture-skill-section').mouseover(function() {
   $('.architecture-skill-icon').css({'filter': 'drop-shadow(0 0 1px #4c4c4c)', 'transition': '0.5s'});
-  $(this).css({'background-color': 'lightBlue', 'transition': '0.5s'});
+  $(this).css({'background-color': '#e5e8f7', 'transition': '0.5s'});
 });
 
 $('.architecture-skill-section').mouseout(function() {
   $('.architecture-skill-icon').css('filter', 'none');
-  $(this).css({'background': '#e5e8f7', 'transition': '0.5s'});
+  $(this).css({'background-color': '#bac0d1', 'transition': '0.5s'});
 });
 
 $('.about-section').mouseover(function() {
