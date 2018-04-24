@@ -96,7 +96,7 @@ $('.application-details li').mouseout(function() {
 
 $('.front-end-skill-section').mouseover(function() {
   $('.front-end-skill-icon').css({'filter': 'drop-shadow(0 0 1px #4c4c4c)','transition': '0.5s'});
-  $(this).css({'background-color': 'lightBlue', 'transition': '0.5s'});
+  $(this).css({'background-color': '#cde7f0', 'transition': '0.5s'});
   $('.front-end-icons img').css({'filter': 'none', 'transition': '0.5s'});
 });
 
@@ -142,7 +142,7 @@ $('.authentication-skill-section').mouseout(function() {
 
 $('.architecture-skill-section').mouseover(function() {
   $('.architecture-skill-icon').css({'filter': 'drop-shadow(0 0 1px #4c4c4c)', 'transition': '0.5s'});
-  $(this).css({'background-color': '#cde7f0', 'transition': '0.5s'});
+  $(this).css({'background-color': 'lightBlue', 'transition': '0.5s'});
 });
 
 $('.architecture-skill-section').mouseout(function() {
