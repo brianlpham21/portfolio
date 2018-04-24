@@ -22,8 +22,9 @@ nav {
   z-index: 10;
 }
 
-nav * {
+.nav-bar * {
   display: inline-block;
+  max-width: 1000px
 }
 
 .nav-main-name {
@@ -275,7 +276,7 @@ figure {
 }
 
 .front-end-icons img {
-  height: 48px;
+  height: 55px;
   margin: 25px 10px 0 10px;
   filter: grayscale(1);
 }
@@ -306,7 +307,7 @@ figure {
 
 .about-title {
   display: inline-block;
-  font-weight: lighter;
+  font-weight: normal;
   padding-top: 20px
 }
 
