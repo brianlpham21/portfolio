@@ -233,9 +233,9 @@ figure {
   float: right;
   list-style-type: none;
   margin-top: 40px;
-  margin-right: 65px;
+  margin-right: 115px;
   font-weight: normal;
-  font-size: 22px;
+  font-size: 18px;
   text-align: right
 }
 
@@ -244,7 +244,7 @@ figure {
 }
 
 .application-description {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: lighter
 }
 
@@ -445,8 +445,17 @@ figure {
 }
 
 @media only screen and (max-width: 575px) {
-  .nav-mail-icon {
+  nav {
+    position: static;
+    height: 65px
+  }
+
+  .hidden-nav-bar {
     display: none
+  }
+
+  .nav-mail-icon-text {
+    display: none !important
   }
 
   .nav-icons {
@@ -458,6 +467,15 @@ figure {
     margin: 25px auto;
     width: 95%;
     height: 95%
+  }
+
+  #work, #skills, #about {
+    padding: 40px 0
+  }
+
+  .work-section-title, .skills-section-title, .about-section-title {
+    margin-bottom: 30px;
+    text-align: center
   }
 
   .application-image {
@@ -477,12 +495,38 @@ figure {
     padding: 2px 0;
   }
 
+  .application-description {
+    font-size: 19px;
+  }
+
   .front-end-icons img, .back-end-icons img, .development-icons img {
     filter: grayscale(0);
   }
 
+  .front-end-icons img {
+    height: 48px;
+    margin: 25px 5px 0 5px;
+  }
+
   .skill-section {
     background-color: #ced2de
+  }
+
+  .skill-list {
+    padding: 20px 0
+  }
+
+  .skill-list li {
+    font-size: 16px;
+    margin: 4px 2px
+  }
+
+  .skill-description {
+    font-size: 19px
+  }
+
+  .front-end-skill-section {
+    padding: 30px
   }
 
   .application-details {
@@ -492,6 +536,14 @@ figure {
 
   .section-container {
     padding: 0 15px
+  }
+
+  .about-section {
+    padding: 15px 40px
+  }
+
+  .about-description {
+    font-size: 19px
   }
 
   .footer-container {
@@ -521,6 +573,18 @@ figure {
     margin-right: 2%
   }
 
+  #work, #skills, #about {
+    padding: 40px 0
+  }
+
+  #work {
+    padding-bottom: 50px
+  }
+
+  .work-section-title, .skills-section-title, .about-section-title {
+    margin-bottom: 30px
+  }
+
   figure {
     display: block;
     margin: 25px auto
@@ -535,6 +599,10 @@ figure {
 
   .application-details li {
     padding: 2px 0;
+  }
+
+  .application-details li:first-child {
+    padding-top: 0px
   }
 
   .section-container {
