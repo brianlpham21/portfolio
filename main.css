@@ -120,6 +120,8 @@ header {
   background-position: center;
 }
 
+/* HIDDEN NAV BAR */
+
 .hidden-nav-bar {
   position: fixed;
   margin-top: -10px;
@@ -190,6 +192,9 @@ section {
 
 /* WORK SECTION */
 
+.app-section {
+}
+
 .application-title {
   font-weight: normal;
   font-size: 28px;
@@ -227,14 +232,14 @@ figure {
   float: right;
   list-style-type: none;
   margin-top: 40px;
-  margin-right: 80px;
+  margin-right: 65px;
   font-weight: normal;
-  font-size: 26px;
+  font-size: 22px;
   text-align: right
 }
 
 .application-details li {
-  padding: 5px 0
+  padding: 7px 0
 }
 
 .application-description {
@@ -251,7 +256,8 @@ figure {
 }
 
 .skill-title {
-  font-weight: normal
+  font-weight: normal;
+  font-size: 28px
 }
 
 .skill-section {
@@ -336,13 +342,14 @@ figure {
 
 .about-section-icon {
   margin-right: 25px;
-  margin-top: 35px
+  margin-top: 35px;
 }
 
 .about-title {
   display: inline-block;
   font-weight: normal;
-  padding-top: 20px
+  padding-top: 20px;
+  font-size: 28px
 }
 
 .about-section {
