@@ -182,7 +182,7 @@ $('.about-section').mouseout(function() {
 
 $(window).scroll(function() {
   if ((($(window).scrollTop() + $(window).height()) - 100) >= $('footer').offset().top) {
-    $('.footer-container').css({'opacity': '1', 'transition': '3s'});
+    $('.footer-container').css({'opacity': '1', 'transition': '2s'});
   }
 });
 
