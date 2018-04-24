@@ -271,13 +271,30 @@ figure {
 }
 
 .front-end-icons, .back-end-icons, .development-icons {
-  text-align: center;
-  padding-top: 12px;
-  color: #444
+  text-align: center
 }
 
-.front-end-icons *, .back-end-icons *, .development-icons * {
-  margin: 0 5px
+.front-end-icons img {
+  height: 48px;
+  margin: 25px 10px 0 10px;
+  filter: grayscale(1);
+}
+
+.node-icon, .mongodb-icon {
+  height: 40px;
+  margin: 25px 15px 0 15px;
+  filter: grayscale(1);
+}
+
+.express-icon {
+  height: 30px;
+  margin: 25px 15px 0 15px;
+}
+
+.development-icons img {
+  height: 40px;
+  margin: 25px 15px 0 15px;
+  filter: grayscale(1);
 }
 
 /* ABOUT SECTION */

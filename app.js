@@ -97,31 +97,37 @@ $('.application-details li').mouseout(function() {
 $('.front-end-skill-section').mouseover(function() {
   $('.front-end-skill-icon').css({'filter': 'drop-shadow(0 0 1px #4c4c4c)','transition': '0.5s'});
   $(this).css({'background-color': 'lightBlue', 'transition': '0.5s'});
+  $('.front-end-icons img').css({'filter': 'none', 'transition': '0.5s'});
 });
 
 $('.front-end-skill-section').mouseout(function() {
   $('.front-end-skill-icon').css('filter', 'none');
   $(this).css({'background-color': '#e0e0e0', 'box-shadow': 'none', 'transition': '0.5s'});
+  $('.front-end-icons img').css({'filter': 'grayscale(1)', 'transition': '0.5s'});
 });
 
 $('.back-end-skill-section').mouseover(function() {
   $('.back-end-skill-icon').css({'filter': 'drop-shadow(0 0 1px #4c4c4c)', 'transition': '0.5s'});
   $(this).css({'background-color': '#b5dbe8', 'transition': '0.5s'});
+  $('.back-end-icons img').css({'filter': 'none', 'transition': '0.5s'});
 });
 
 $('.back-end-skill-section').mouseout(function() {
   $('.back-end-skill-icon').css('filter', 'none');
   $(this).css({'background-color': '#e0e0e0', 'transition': '0.5s'});
+  $('.back-end-icons img').css({'filter': 'grayscale(1)', 'transition': '0.5s'});
 });
 
 $('.development-skill-section').mouseover(function() {
   $('.development-skill-icon').css({'filter': 'drop-shadow(0 0 1px #4c4c4c)', 'transition': '0.5s'});
   $(this).css({'background-color': '#bddfeb', 'transition': '0.5s'});
+  $('.development-icons img').css({'filter': 'none', 'transition': '0.5s'});
 });
 
 $('.development-skill-section').mouseout(function() {
   $('.development-skill-icon').css('filter', 'none');
   $(this).css({'background-color': '#e0e0e0', 'transition': '0.5s'});
+  $('.development-icons img').css({'filter': 'grayscale(1)', 'transition': '0.5s'});
 });
 
 $('.authentication-skill-section').mouseover(function() {
