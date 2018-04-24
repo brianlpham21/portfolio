@@ -7,13 +7,13 @@ $('.nav-main-name').click(function() {
 
 $(window).scroll(function() {
   if ($(window).scrollTop() >= $('section').offset().top - 80) {
-    $('.nav-main-name').css({'font-size': '16px', 'transition': '0.25s'});
+    $('.nav-main-name').css({'font-size': '16px', 'top': '15px','transition': '0.25s'});
     $('.nav-icon-item').css({'opacity': '0', 'transition': '0.5s'});
     $('.nav-mail-icon-text').css({'opacity': '0', 'transition': '0.5s'});
     $('nav').css({'padding': '10px 0', 'transition': '0.5s'});
   }
   else if ($(window).scrollTop() < $('section').offset().top - 80) {
-    $('.nav-main-name').css({'font-size': '25px', 'transition': '0.25s'});
+    $('.nav-main-name').css({'font-size': '25px', 'top': '20px', 'transition': '0.25s'});
     $('.nav-icon-item').css({'opacity': '1', 'transition': '0.5s'});
     $('.nav-mail-icon-text').css({'opacity': '1', 'transition': '0.5s'});
     $('nav').css({'padding': '20px 0', 'transition': '0.5s'});

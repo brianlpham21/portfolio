@@ -24,12 +24,19 @@ nav {
 
 .nav-bar * {
   display: inline-block;
-  max-width: 1000px
+}
+
+.nav-bar {
+  max-width: 1000px;
+  margin: auto
 }
 
 .nav-main-name {
   letter-spacing: 3px;
-  font-size: 25px
+  font-size: 25px;
+  position: absolute;
+  left: 0;
+  right: 0;
 }
 
 .nav-main-name:hover {
@@ -37,8 +44,7 @@ nav {
 }
 
 .nav-mail-icon {
-  position: absolute;
-  left: 15%
+  float: left
 }
 
 .nav-mail-icon-item {
@@ -55,8 +61,7 @@ nav {
 }
 
 .nav-icons {
-  position: absolute;
-  right: 8%;
+  float: right
 }
 
 .nav-icon-item {
@@ -82,7 +87,6 @@ nav {
 .nav-mail-icon-text {
   padding: 0 12px;
   font-size: 15px;
-  vertical-align: middle
 }
 
 .hidden-nav-icon-item {
@@ -100,7 +104,7 @@ nav {
 }
 
 .last-hidden {
-  margin-right: 150px
+  margin-right: 30px
 }
 
 main {
