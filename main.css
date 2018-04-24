@@ -129,7 +129,8 @@ header {
   z-index: 9;
   width: 100%;
   text-align: center;
-  border-top: 2px solid silver
+  border-top: 2px solid silver;
+  border-bottom: 1px solid #ececec
 }
 
 .hidden-nav-bar * {
