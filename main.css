@@ -452,6 +452,56 @@ figure {
   .nav-icons {
     display: none
   }
+
+  figure {
+    display: block;
+    margin: 25px auto;
+    width: 95%;
+    height: 95%
+  }
+
+  .application-image {
+    display: inline-block;
+    width: 100%;
+    height: 100%
+  }
+
+  .application-details {
+    margin-top: 0px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+
+  .application-details li {
+    padding: 2px 0;
+  }
+
+  .front-end-icons img, .back-end-icons img, .development-icons img {
+    filter: grayscale(0);
+  }
+
+  .skill-section {
+    background-color: #ced2de
+  }
+
+  .application-details {
+    display: block;
+    float: none
+  }
+
+  .section-container {
+    padding: 0 15px
+  }
+
+  .footer-container {
+    text-align: center
+  }
+
+  .scroll-up-arrow {
+    position: absolute;
+    right: 50px
+  }
 }
 
 @media only screen and (min-width: 576px) and (max-width: 900px) {
@@ -459,7 +509,43 @@ figure {
     left: 8%
   }
 
+  .nav-mail-icon-text {
+    display: none
+  }
+
   .nav-icon-text {
     display: none
+  }
+
+  .nav-icons {
+    margin-right: 2%
+  }
+
+  figure {
+    display: block;
+    margin: 25px auto
+  }
+
+  .application-details {
+    margin-top: 0px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+
+  .application-details li {
+    padding: 2px 0;
+  }
+
+  .section-container {
+    padding: 0 40px
+  }
+
+  .front-end-icons img, .back-end-icons img, .development-icons img {
+    filter: grayscale(0);
+  }
+
+  .skill-section {
+    background-color: #ced2de
   }
 }
