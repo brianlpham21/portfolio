@@ -120,6 +120,31 @@ header {
   background-position: center;
 }
 
+.hidden-nav-bar {
+  position: fixed;
+  margin-top: -10px;
+  background-color: white;
+  z-index: 9;
+  width: 100%;
+  text-align: center;
+  border-top: 2px solid silver
+}
+
+.hidden-nav-bar * {
+  display: inline-block;
+  margin: 4px 20px;
+  text-align: center;
+  padding: 0;
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.hidden-nav-bar *:hover {
+  color: silver;
+  transition: 0.4s
+}
+
 /* DIVIDERS */
 
 .section-divider {
