@@ -170,6 +170,14 @@ $('.architecture-skill-section').mouseout(function() {
   $(this).css({'background-color': '#ced2de', 'transition': '0.5s'});
 });
 
+$('.skill-list li').mouseover(function() {
+  $(this).css({'box-shadow': '2px 2px 10px dimGrey', 'transition': '0.25s'});
+});
+
+$('.skill-list li').mouseout(function() {
+  $(this).css({'box-shadow': 'none', 'transition': '0.25s'});
+});
+
 $('.about-section').mouseover(function() {
   $(this).children('.about-title').css({'letter-spacing': '1px', 'transition': '0.5s'});
   $(this).css({'box-shadow': 'inset 0 0 25px silver', 'transition': '0.5s'});

@@ -302,11 +302,6 @@ figure {
   font-weight: normal
 }
 
-.skill-list li:hover {
-  box-shadow: 2px 2px 10px dimGrey;
-  transition: 0.25s
-}
-
 .skill-description {
   padding: 10px 0;
   font-weight: lighter
