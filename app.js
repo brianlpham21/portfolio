@@ -149,10 +149,12 @@ $('.architecture-skill-section').mouseout(function() {
 
 $('.about-section').mouseover(function() {
   $(this).children('.about-title').css({'letter-spacing': '1px', 'transition': '0.5s'});
+  $(this).css({'box-shadow': 'inset 0 0 25px silver', 'transition': '0.5s'});
 });
 
 $('.about-section').mouseout(function() {
   $(this).children('.about-title').css('letter-spacing', '0');
+  $(this).css({'box-shadow': 'inset 0 0 10px silver', 'transition': '0.5s'});
 });
 
 $(window).scroll(function() {
