@@ -37,6 +37,8 @@ nav {
   position: absolute;
   left: 0;
   right: 0;
+  width: 200px;
+  margin: auto
 }
 
 .nav-main-name:hover {
@@ -44,7 +46,7 @@ nav {
 }
 
 .nav-mail-icon {
-  float: left
+  float: left;
 }
 
 .nav-mail-icon-item {
