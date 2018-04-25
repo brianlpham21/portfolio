@@ -29,7 +29,7 @@ $(window).scroll(function() {
     $('.hidden-nav-icon-item').removeClass('hidden');
     setTimeout(function() {
       $('.hidden-nav-icon-item').css({'opacity': '1', 'transition': '1s'});
-    }, 300);
+    }, 50);
   }
   else if ($(window).scrollTop() < $('section').offset().top + 100) {
     $('.nav-icon-item').css('display', 'inline-block');
