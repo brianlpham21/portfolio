@@ -616,4 +616,8 @@ figure {
   .skill-section {
     background-color: #ced2de
   }
+
+  .skill-list li {
+    margin: 4px 2px
+  }
 }
