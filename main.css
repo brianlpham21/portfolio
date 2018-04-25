@@ -573,6 +573,11 @@ figure {
     margin-right: 2%
   }
 
+  header {
+    background-size: cover;
+    height: 370px;
+  }
+
   #work, #skills, #about {
     padding: 40px 0
   }
