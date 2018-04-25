@@ -1,7 +1,7 @@
 $('.nav-main-name').click(function() {
   $(document).ready(function() {
     $(this).scrollTop(0);
-    window.location.reload()
+    window.location.reload();
   });
 });
 
