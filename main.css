@@ -360,6 +360,22 @@ figure {
   font-weight: lighter
 }
 
+/* INSTAGRAM FEED */
+
+#instagram-feed {
+  padding: 0;
+  min-height: 0;
+  margin-bottom: 80px
+}
+
+.instagram-feed-title {
+  padding: 10px 0
+}
+
+#instafeed {
+  margin: 4px
+}
+
 /* FOOTER */
 
 .footer-container {
