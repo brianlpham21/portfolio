@@ -376,6 +376,7 @@ figure {
 #instafeed img {
   margin: 2px;
   height: 170px;
+  width: 170px;
   filter: grayscale(0.3);
   opacity: 0.9
 }
