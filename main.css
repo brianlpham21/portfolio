@@ -206,14 +206,14 @@ section {
   height: 280px;
 }
 
-img {
+.application-image, .skill-technology-icon {
 	-webkit-transform: scale(1);
 	transform: scale(1);
 	-webkit-transition: .5s ease-in-out;
 	transition: .5s ease-in-out;
 }
 
-img:hover {
+.application-image:hover, .skill-technology-icon:hover {
 	-webkit-transform: scale(1.1);
 	transform: scale(1.1);
 }
@@ -365,15 +365,19 @@ figure {
 #instagram-feed {
   padding: 0;
   min-height: 0;
-  margin-bottom: 80px
+  max-width: 900px;
+  margin: 0 auto 80px auto
 }
 
 .instagram-feed-title {
-  padding: 10px 0
+  padding: 10px 0 20px 0
 }
 
-#instafeed {
-  margin: 4px
+#instafeed img {
+  margin: 2px;
+  height: 170px;
+  filter: grayscale(0.3);
+  opacity: 0.9
 }
 
 /* FOOTER */
