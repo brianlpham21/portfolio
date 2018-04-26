@@ -365,7 +365,7 @@ figure {
 #instagram-feed {
   padding: 0;
   min-height: 0;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto 80px auto
 }
 
@@ -374,11 +374,10 @@ figure {
 }
 
 #instafeed img {
-  margin: 2px;
+  margin: 0 2px;
   height: 170px;
   width: 170px;
   filter: grayscale(0.3);
-  opacity: 0.9
 }
 
 /* FOOTER */
