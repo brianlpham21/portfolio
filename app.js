@@ -195,7 +195,11 @@ $(window).scroll(function() {
 });
 
 $('.scroll-up-arrow').click(function() {
-  $('html').animate({
+  if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
+    window.scrollTo(200,100) // first value for left offset, second value for top offset
+  } else {
+    $('html').animate({
       scrollTop: '0px'
-  }, 1200);
+      }, 1200);
+  }
 });
