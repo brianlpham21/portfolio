@@ -1,7 +1,7 @@
 # Portfolio Website
 
 ## Live Site
-You can access the website at:
+You can access the website at: http://www.brianpham.co/
 
 ## Technical
 - This website was built using HTML, CSS, JavaScript, and jQuery.
