@@ -220,17 +220,18 @@ section {
 
 .demo-github {
   margin-left: 30px;
+  font-size: 17px;
+  vertical-align: middle;
 }
 
 .demo-github a {
   color: black;
-  font-size: 17px;
   text-decoration: none;
 }
 
 .demo-github a:hover {
   color: silver;
-  transition: 0.4s
+  transition: 0.1s
 }
 
 figure {
