@@ -219,13 +219,13 @@ section {
 }
 
 .demo-github {
-  margin-left: 30px
+  margin-left: 30px;
 }
 
 .demo-github a {
   color: black;
   font-size: 17px;
-  text-decoration: none
+  text-decoration: none;
 }
 
 .demo-github a:hover {
@@ -514,6 +514,11 @@ figure {
     height: 95%
   }
 
+  .demo-github {
+    display: block;
+    margin: 0
+  }
+
   #work, #skills, #about {
     padding: 40px 0
   }
@@ -648,6 +653,10 @@ figure {
   header {
     background-size: cover;
     height: 370px;
+  }
+
+  .demo-github {
+    float: right
   }
 
   #work, #skills, #about {
