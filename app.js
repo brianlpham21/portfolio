@@ -196,7 +196,7 @@ $(window).scroll(function() {
 
 $('.scroll-up-arrow').click(function() {
   if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
-    window.scrollBy({top: 0, behavior: 'smooth'}) // first value for left offset, second value for top offset
+    window.scroll({top: 0, behavior: 'smooth'}) // first value for left offset, second value for top offset
   } else {
     $('html').animate({
       scrollTop: '0px'
