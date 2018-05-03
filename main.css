@@ -469,6 +469,13 @@ figure {
     height: 65px
   }
 
+  header {
+    background-size: 600px;
+    height: 200px;
+    background-position-y: 190px !important;
+    opacity: 1 !important
+  }
+
   .hidden-nav-bar {
     display: none
   }
@@ -527,12 +534,26 @@ figure {
     margin: 25px 5px 0 5px;
   }
 
+  .back-end-icons .node-icon, .back-end-icons .mongodb-icon {
+    display: inline-block;
+    height: 35px;
+  }
+
+  .back-end-icons .express-icon {
+    display: inline-block;
+    height: 25px;
+  }
+
+  .skill-icon {
+    margin-top: 2px
+  }
+
   .skill-section {
     background-color: #ced2de
   }
 
   .skill-list {
-    padding: 20px 0
+    padding: 20px 0 5px 0
   }
 
   .skill-list li {
@@ -572,6 +593,10 @@ figure {
   .scroll-up-arrow {
     position: absolute;
     right: 50px
+  }
+
+  .instafeed a:nth-child(n+5)  {
+    display: none
   }
 }
 
