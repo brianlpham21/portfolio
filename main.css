@@ -484,8 +484,12 @@ figure {
     display: none !important
   }
 
-  .nav-icons {
+  .nav-icon-text {
     display: none
+  }
+
+  .nav-icon-item {
+    padding-right: 16px
   }
 
   figure {
@@ -614,7 +618,16 @@ figure {
   }
 
   .nav-icons {
-    margin-right: 2%
+    margin-right: 2%;
+  }
+
+  .nav-icon-item {
+    opacity: 1 !important;
+    display: inline-block !important;
+  }
+
+  .hidden-nav-icon-item {
+    display: none !important;
   }
 
   header {
