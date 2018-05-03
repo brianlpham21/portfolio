@@ -485,9 +485,9 @@ figure {
   }
 
   header {
-    background-size: 600px;
-    height: 200px;
-    background-position-y: 190px !important;
+    background-size: 540px;
+    height: 180px;
+    background-position-y: 170px !important;
     opacity: 1 !important
   }
 
@@ -499,12 +499,20 @@ figure {
     display: none !important
   }
 
+  .nav-mail-icon {
+    padding-left: 20px
+  }
+
   .nav-icon-text {
     display: none
   }
 
   .nav-icon-item {
-    padding-right: 16px
+    padding-right: 12px
+  }
+
+  .second-last-icon-item {
+    padding-right: 5px
   }
 
   figure {
