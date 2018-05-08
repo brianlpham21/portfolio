@@ -147,6 +147,7 @@ if ($(window).width() > 428) {
   $('.authentication-skill-section').mouseover(function() {
     $('.authentication-skill-icon').css({'filter': 'drop-shadow(0 0 1px #4c4c4c)', 'transition': '0.5s'});
     $(this).css({'background-color': '#e5e8f7', 'transition': '0.5s'});
+    $('.authentication-icons img').css({'filter': 'none', 'transition': '0.5s'});
   });
 
   $('.authentication-skill-section').mouseout(function() {
