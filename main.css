@@ -742,6 +742,7 @@ figure {
 
   .application-details li {
     padding: 4px 0;
+    letter-spacing: 0 !important;
   }
 
   .application-details li:first-child {
