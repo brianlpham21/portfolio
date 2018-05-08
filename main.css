@@ -512,6 +512,10 @@ figure {
     display: none
   }
 
+  .nav-main-name {
+    letter-spacing: 1.5px
+  }
+
   .nav-mail-icon-text {
     display: none !important
   }
