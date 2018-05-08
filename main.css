@@ -641,8 +641,8 @@ figure {
     padding: 4px 0
   }
 
-  .front-end-skill-section {
-    padding: 30px
+  .front-end-skill-section, .back-end-skill-section, .development-skill-section, .authentication-skill-section, .architecture-skill-section {
+    padding: 30px 24px
   }
 
   .application-details {
@@ -655,7 +655,7 @@ figure {
   }
 
   .about-section {
-    padding: 15px 40px
+    padding: 15px 30px
   }
 
   .about-description {
