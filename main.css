@@ -573,7 +573,12 @@ figure {
 
   .application-description {
     font-size: 18px;
-    line-height: 24px
+    line-height: 24px;
+    padding-top: 0;
+  }
+
+  .skill-section:before {
+    border-width: 15px
   }
 
   .front-end-icons img, .back-end-icons img, .development-icons img , .authentication-icons img {
@@ -581,7 +586,7 @@ figure {
   }
 
   .front-end-icons img {
-    height: 30px;
+    height: 40px;
     margin: 25px 5px 0 5px;
   }
 
