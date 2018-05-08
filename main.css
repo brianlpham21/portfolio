@@ -549,7 +549,8 @@ figure {
 
   .work-section-title, .skills-section-title, .about-section-title {
     margin-bottom: 30px;
-    text-align: center
+    text-align: center;
+    font-size: 30px
   }
 
   .application-image {
@@ -566,11 +567,12 @@ figure {
   }
 
   .application-details li {
-    padding: 2px 0;
+    padding: 1px 0;
   }
 
   .application-description {
-    font-size: 19px;
+    font-size: 18px;
+    line-height: 24px
   }
 
   .front-end-icons img, .back-end-icons img, .development-icons img {
