@@ -567,6 +567,7 @@ figure {
   }
 
   .application-details li {
+    font-size: 16px;
     padding: 1px 0;
   }
 
@@ -580,18 +581,36 @@ figure {
   }
 
   .front-end-icons img {
-    height: 48px;
+    height: 30px;
     margin: 25px 5px 0 5px;
   }
 
   .back-end-icons .node-icon, .back-end-icons .mongodb-icon {
     display: inline-block;
-    height: 35px;
+    height: 30px;
+    margin: 15px 0
+  }
+
+  .back-end-icons .mongodb-icon {
+    margin-bottom: 0
   }
 
   .back-end-icons .express-icon {
     display: inline-block;
     height: 25px;
+    margin: 15px 0 15px 15px
+  }
+
+  .development-icons img {
+    height: 30px
+  }
+
+  .authentication-icons img {
+    height: 40px
+  }
+
+  .architecture-icons img {
+    height: 50px
   }
 
   .skill-icon {
@@ -607,7 +626,7 @@ figure {
   }
 
   .skill-list li {
-    font-size: 16px;
+    font-size: 14px;
     margin: 4px 2px
   }
 
