@@ -574,7 +574,7 @@ figure {
   .application-description {
     font-size: 18px;
     line-height: 24px;
-    padding-top: 0;
+    padding: 0 10px 5px 10px;
   }
 
   .skill-section:before {
