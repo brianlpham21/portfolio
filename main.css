@@ -696,7 +696,7 @@ figure {
   }
 
   .nav-mail-icon-text {
-    display: none
+    display: none !important
   }
 
   .nav-icon-text {
@@ -766,7 +766,7 @@ figure {
     padding: 0 40px
   }
 
-  .front-end-icons img, .back-end-icons img, .development-icons img {
+  .front-end-icons img, .back-end-icons img, .development-icons img, .authentication-icons img {
     filter: grayscale(0);
   }
 
