@@ -575,7 +575,7 @@ figure {
     line-height: 24px
   }
 
-  .front-end-icons img, .back-end-icons img, .development-icons img {
+  .front-end-icons img, .back-end-icons img, .development-icons img , .authentication-icons img {
     filter: grayscale(0);
   }
 
@@ -612,7 +612,9 @@ figure {
   }
 
   .skill-description {
-    font-size: 19px
+    font-size: 18px;
+    line-height: 24px;
+    padding: 4px 0
   }
 
   .front-end-skill-section {
@@ -633,7 +635,8 @@ figure {
   }
 
   .about-description {
-    font-size: 19px
+    font-size: 18px;
+    line-height: 24px;
   }
 
   .footer-container {
