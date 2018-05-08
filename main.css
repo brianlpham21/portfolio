@@ -261,7 +261,9 @@ figure {
 
 .application-description {
   font-size: 20px;
-  font-weight: lighter
+  font-weight: lighter;
+  padding: 5px 20px;
+  line-height: 28px;
 }
 
 /* SKILLS SECTION */
@@ -319,7 +321,8 @@ figure {
 }
 
 .skill-description {
-  padding: 10px 0;
+  padding: 10px 30px;
+  line-height: 28px;
   font-weight: lighter
 }
 
@@ -373,7 +376,8 @@ figure {
 
 .about-description {
   padding: 20px 0;
-  font-weight: lighter
+  font-weight: lighter;
+  line-height: 28px;
 }
 
 /* INSTAGRAM FEED */
