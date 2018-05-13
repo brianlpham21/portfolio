@@ -204,23 +204,6 @@ section {
   font-weight: normal;
 }
 
-.application-image {
-  display: inline-block;
-  height: 280px;
-}
-
-.application-image, .skill-technology-icon {
-	-webkit-transform: scale(1);
-	transform: scale(1);
-	-webkit-transition: .5s ease-in-out;
-	transition: .5s ease-in-out;
-}
-
-.application-image:hover, .skill-technology-icon:hover {
-	-webkit-transform: scale(1.1);
-	transform: scale(1.1);
-}
-
 .demo-github {
   margin-left: 30px;
   font-size: 17px;
@@ -238,35 +221,52 @@ section {
 }
 
 figure {
-	width: 480px;
+  background: #fff;
+  display: inline-block;
 	height: 280px;
 	margin: 20px;
+  overflow: hidden;
 	padding: 0;
-	background: #fff;
-	overflow: hidden;
+  width: 480px;
+}
+
+.application-image {
   display: inline-block;
+  height: 280px;
+}
+
+.application-image, .skill-technology-icon {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
+}
+
+.application-image:hover, .skill-technology-icon:hover {
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
 }
 
 .application-details {
   display: inline-block;
   float: right;
-  list-style-type: none;
-  margin-top: 30px;
-  margin-right: 108px;
-  font-weight: normal;
   font-size: 18px;
-  text-align: right
-}
-
-.application-details li {
-  padding: 11px 0
+  font-weight: normal;
+  list-style-type: none;
+  margin-right: 108px;
+  margin-top: 30px;
+  text-align: right;
 }
 
 .application-description {
   font-size: 20px;
   font-weight: lighter;
-  padding: 5px 20px;
   line-height: 28px;
+  padding: 5px 20px;
+}
+
+.application-details li {
+  padding: 11px 0
 }
 
 /* SKILLS SECTION */
