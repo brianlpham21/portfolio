@@ -9,16 +9,15 @@ body {
   text-align: center;
 }
 
-nav, footer {
-  padding: 20px 0;
-  background-color: white;
-}
+/* NAV BAR STYLING */
 
 nav {
-  position: fixed;
-  top: 0;
+  background-color: white;
   left: 0;
+  padding: 20px 0;
+  position: fixed;
   right: 0;
+  top: 0;
   z-index: 10;
 }
 
@@ -27,29 +26,14 @@ nav {
 }
 
 .nav-bar {
+  margin: auto;
   max-width: 1000px;
-  margin: auto
 }
 
-.nav-main-name {
-  letter-spacing: 3px;
-  font-size: 25px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  width: 200px;
-  margin: auto
-}
-
-.nav-main-name:hover {
-  cursor: pointer;
-}
+/* nav bar mail section */
 
 .nav-mail-icon {
   float: left;
-}
-
-.nav-mail-icon-item {
   font-size: 22px;
 }
 
@@ -61,6 +45,30 @@ nav {
 .nav-mail-icon-item a {
   color: #505050;
 }
+
+.nav-mail-icon-text {
+  font-size: 15px;
+  padding: 0 12px;
+  vertical-align: middle;
+}
+
+/* nav bar name section */
+
+.nav-main-name {
+  font-size: 25px;
+  left: 0;
+  letter-spacing: 3px;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  width: 200px;
+}
+
+.nav-main-name:hover {
+  cursor: pointer;
+}
+
+/* nav bar github & linkedin section */
 
 .nav-icons {
   float: right
@@ -82,14 +90,8 @@ nav {
 }
 
 .nav-icon-text {
+  font-size: 15px;
   padding: 0 8px;
-  font-size: 15px;
-}
-
-.nav-mail-icon-text {
-  padding: 0 12px;
-  font-size: 15px;
-  vertical-align: middle
 }
 
 .hidden-nav-icon-item {
@@ -110,37 +112,27 @@ nav {
   margin-right: 30px
 }
 
-main {
-  background-color: #f7f7f7
-}
-
-header {
-  background-image: url('./images/portfolio-banner.png');
-  height: 500px;
-  background-position: center;
-}
-
 /* HIDDEN NAV BAR */
 
 .hidden-nav-bar {
-  position: fixed;
-  margin-top: -10px;
   background-color: white;
-  z-index: 9;
-  width: 100%;
-  text-align: center;
+  border-bottom: 1px solid #ececec;
   border-top: 2px solid silver;
-  border-bottom: 1px solid #ececec
+  margin-top: -10px;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  z-index: 9;
 }
 
 .hidden-nav-bar * {
-  display: inline-block;
-  margin: 4px 20px;
-  text-align: center;
-  padding: 0;
   color: black;
-  text-decoration: none;
+  display: inline-block;
   font-size: 18px;
+  margin: 4px 20px;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
 }
 
 .hidden-nav-bar *:hover {
@@ -148,17 +140,31 @@ header {
   transition: 0.4s
 }
 
+/* MAIN */
+
+main {
+  background-color: #f7f7f7
+}
+
+/* HEADER SECTION */
+
+header {
+  background-image: url('./images/portfolio-banner.png');
+  background-position: center;
+  height: 500px;
+}
+
 /* DIVIDERS */
 
 .section-divider {
+  margin: auto;
   width: 70%;
-  margin: auto
 }
 
 .application-divider {
   margin: 35px auto;
   opacity: 0.4;
-  width: 75%
+  width: 75%;
 }
 
 .footer-divider {
@@ -167,21 +173,21 @@ header {
 
 /* SECTIONS */
 
-.section-icon {
-  padding-right: 10px;
-  margin-right: 20px
-}
-
-.work-section-title, .skills-section-title, .about-section-title {
-  margin-bottom: 40px;
-  font-weight: normal;
-  letter-spacing: 2px;
-  font-size: 45px
-}
-
 section {
   min-height: 400px;
   padding: 60px 0;
+}
+
+.section-icon {
+  margin-right: 20px;
+  padding-right: 10px;
+}
+
+.work-section-title, .skills-section-title, .about-section-title {
+  font-weight: normal;
+  font-size: 45px;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
 }
 
 .section-container {
@@ -193,12 +199,9 @@ section {
 
 /* WORK SECTION */
 
-.app-section {
-}
-
 .application-title {
-  font-weight: normal;
   font-size: 28px;
+  font-weight: normal;
 }
 
 .application-image {
@@ -412,6 +415,11 @@ figure {
 }
 
 /* FOOTER */
+
+footer {
+  padding: 20px 0;
+  background-color: white;
+}
 
 .footer-container {
   max-width: 1000px;
