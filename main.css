@@ -398,10 +398,10 @@ figure {
 /* INSTAGRAM FEED */
 
 #instagram-feed {
-  padding: 0;
-  min-height: 0;
+  margin: 0 auto 80px auto;
   max-width: 1000px;
-  margin: 0 auto 80px auto
+  min-height: 0;
+  padding: 0;
 }
 
 .instagram-feed-title {
@@ -409,29 +409,29 @@ figure {
 }
 
 #instafeed img {
-  margin: 0 2px;
   height: 170px;
+  margin: 0 2px;
   width: 170px;
 }
 
 /* FOOTER */
 
 footer {
-  padding: 20px 0;
   background-color: white;
+  padding: 20px 0;
 }
 
 .footer-container {
-  max-width: 1000px;
-  text-align: left;
   margin: auto;
+  max-width: 1000px;
+  opacity: 0;
   padding: 20px 60px 0 60px;
-  opacity: 0
+  text-align: left;
 }
 
 .social-media-icons {
-  padding: 20px 0;
   display: inline-block;
+  padding: 20px 0;
 }
 
 .social-media-icons a {
@@ -446,27 +446,27 @@ footer {
 }
 
 .footer-main-name {
-  padding: 30px 0;
   font-size: 16px;
-  letter-spacing: 1px
+  letter-spacing: 1px;
+  padding: 30px 0;
 }
 
 .scroll-up-arrow {
   display: inline-block;
   float: right;
-  padding: 10px 0
+  padding: 10px 0;
 }
 
 .scroll-up-arrow:hover {
-  cursor: pointer
+  cursor: pointer;
 }
 
 .fa-pulse {
 	display: inline-block;
+  animation: pulse 3.25s infinite linear;
 	-moz-animation: pulse 3.25s infinite linear;
 	-o-animation: pulse 3.25s infinite linear;
 	-webkit-animation: pulse 3.25s infinite linear;
-	animation: pulse 3.25s infinite linear;
 }
 
 @-webkit-keyframes pulse {
@@ -500,78 +500,78 @@ footer {
 }
 
 .hidden {
-  display: none
+  display: none;
 }
 
-/* PHONE STYLING */
+/* PHONE STYLING MEDIA QUERIES */
 
 @media only screen and (max-width: 575px) {
   nav {
     position: static;
-    height: 65px
+    height: 65px;
   }
 
   header {
     background-size: 540px;
     height: 180px;
     background-position-y: 170px !important;
-    opacity: 1 !important
+    opacity: 1 !important;
   }
 
   .hidden-nav-bar {
-    display: none
+    display: none;
   }
 
   .nav-main-name {
-    letter-spacing: 1.5px
+    letter-spacing: 1.5px;
   }
 
   .nav-mail-icon-text {
-    display: none !important
+    display: none !important;
   }
 
   .nav-mail-icon {
-    padding-left: 20px
+    padding-left: 20px;
   }
 
   .nav-icon-text {
-    display: none
+    display: none;
   }
 
   .nav-icon-item {
-    padding-right: 12px
+    padding-right: 12px;
   }
 
   .second-last-icon-item {
-    padding-right: 5px
+    padding-right: 5px;
   }
 
   figure {
     display: block;
     margin: 25px auto;
     width: 95%;
-    height: 95%
+    height: 95%;
   }
 
   .demo-github {
     display: block;
-    margin: 0
+    margin: 0;
   }
 
   #work, #skills, #about {
-    padding: 40px 0
+    padding: 40px 0;
   }
 
   .work-section-title, .skills-section-title, .about-section-title {
     margin-bottom: 30px;
     text-align: center;
-    font-size: 30px
+    font-size: 30px;
   }
 
   .application-image {
     display: inline-block;
     width: 100%;
-    height: 100%
+    height: 100%;
   }
 
   .application-details {
@@ -593,7 +593,7 @@ footer {
   }
 
   .skill-section:before {
-    border-width: 15px
+    border-width: 15px;
   }
 
   .front-end-icons img, .back-end-icons img, .development-icons img , .authentication-icons img {
@@ -608,73 +608,73 @@ footer {
   .back-end-icons .node-icon, .back-end-icons .mongodb-icon {
     display: inline-block;
     height: 30px;
-    margin: 15px 0
+    margin: 15px 0;
   }
 
   .back-end-icons .mongodb-icon {
-    margin-bottom: 0
+    margin-bottom: 0;
   }
 
   .back-end-icons .express-icon {
     display: inline-block;
     height: 25px;
-    margin: 15px 0 15px 15px
+    margin: 15px 0 15px 15px;
   }
 
   .development-icons img {
-    height: 30px
+    height: 30px;
   }
 
   .authentication-icons img {
-    height: 40px
+    height: 40px;
   }
 
   .architecture-icons img {
-    height: 50px
+    height: 50px;
   }
 
   .skill-title {
-    padding-left: 0
+    padding-left: 0;
   }
 
   .skill-icon {
-    margin-top: 2px
+    margin-top: 2px;
   }
 
   .skill-section {
-    background-color: #ced2de
+    background-color: #ced2de;
   }
 
   .skill-list {
-    padding: 20px 0 5px 0
+    padding: 20px 0 5px 0;
   }
 
   .skill-list li {
     font-size: 14px;
-    margin: 4px 2px
+    margin: 4px 2px;
   }
 
   .skill-description {
     font-size: 18px;
     line-height: 24px;
-    padding: 4px 0
+    padding: 4px 0;
   }
 
   .front-end-skill-section, .back-end-skill-section, .development-skill-section, .authentication-skill-section, .architecture-skill-section {
-    padding: 30px 24px
+    padding: 30px 24px;
   }
 
   .application-details {
     display: block;
-    float: none
+    float: none;
   }
 
   .section-container {
-    padding: 0 15px
+    padding: 0 15px;
   }
 
   .about-section {
-    padding: 15px 30px
+    padding: 15px 30px;
   }
 
   .about-description {
@@ -683,16 +683,16 @@ footer {
   }
 
   .footer-container {
-    text-align: center
+    text-align: center;
   }
 
   .scroll-up-arrow {
     position: absolute;
-    right: 50px
+    right: 50px;
   }
 
   .instafeed a:nth-child(n+5)  {
-    display: none
+    display: none;
   }
 
   .footer-container {
@@ -700,19 +700,15 @@ footer {
   }
 }
 
-/* TABLET STYLING */
+/* TABLET STYLING MEDIA QUERIES */
 
 @media only screen and (min-width: 576px) and (max-width: 900px) {
   .nav-mail-icon {
-    left: 8%
+    left: 8%;
   }
 
   .nav-mail-icon-text {
-    display: none !important
-  }
-
-  .nav-icon-text {
-    display: none
+    display: none !important;
   }
 
   .nav-icons {
@@ -724,6 +720,10 @@ footer {
     display: inline-block !important;
   }
 
+  .nav-icon-text {
+    display: none;
+  }
+
   .hidden-nav-icon-item {
     display: none !important;
   }
@@ -733,25 +733,29 @@ footer {
     height: 370px;
   }
 
-  .demo-github {
-    float: right
-  }
-
   #work, #skills, #about {
-    padding: 40px 0
+    padding: 40px 0;
   }
 
   #work {
-    padding-bottom: 50px
+    padding-bottom: 50px;
   }
 
   .work-section-title, .skills-section-title, .about-section-title {
-    margin-bottom: 30px
+    margin-bottom: 30px;
+  }
+
+  .demo-github {
+    float: right;
   }
 
   figure {
     display: block;
-    margin: 25px auto
+    margin: 25px auto;
+  }
+
+  .section-container {
+    padding: 0 40px;
   }
 
   .application-details {
@@ -767,35 +771,31 @@ footer {
   }
 
   .application-details li:first-child {
-    padding-top: 0px
+    padding-top: 0px;
   }
 
   .application-description {
-    padding-top: 0
+    padding-top: 0;
   }
 
-  .section-container {
-    padding: 0 40px
+  .skill-section {
+    background-color: #ced2de;
+  }
+
+  .skill-list li {
+    margin: 4px 2px;
+    font-size: 16px;
+  }
+
+  .skill-description {
+    padding: 10px 0;
   }
 
   .front-end-icons img, .back-end-icons img, .development-icons img, .authentication-icons img {
     filter: grayscale(0);
   }
 
-  .skill-section {
-    background-color: #ced2de
-  }
-
-  .skill-list li {
-    margin: 4px 2px;
-    font-size: 16px
-  }
-
-  .skill-description {
-    padding: 10px 0
-  }
-
   .instafeed a:nth-child(n+5)  {
-    display: none
+    display: none;
   }
 }
