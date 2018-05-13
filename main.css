@@ -271,63 +271,63 @@ figure {
 
 /* SKILLS SECTION */
 
-.skill-icon {
-  float: left;
-  margin: 10px 38px 5px 20px;
-  color: #444
-}
-
-.skill-title {
-  font-weight: normal;
-  font-size: 28px;
-  padding-left: 125px
-}
-
 .skill-section {
   background-color: #e0e0e0;
+  border-radius: 5px;
   margin: 24px 0;
   padding: 35px;
-  border-radius: 5px;
   position: relative;
-  overflow: hidden
+  overflow: hidden;
 }
 
 .skill-section:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  border-style: solid;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
-  width: 0;
-  border-width: 20px;
   border-color: #f7f7f7 #f7f7f7 rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.3);
   border-radius: 0 0 0 5px;
+  border-style: solid;
+  border-width: 20px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
   transition: border-width 0.75s;
+  width: 0;
 }
 
 .skill-section:hover:before {
   border-width: 0px;
 }
 
+.skill-icon {
+  color: #444;
+  float: left;
+  margin: 10px 38px 5px 20px;
+}
+
+.skill-title {
+  font-size: 28px;
+  font-weight: normal;
+  padding-left: 125px;
+}
+
 .skill-list {
-  padding: 10px 0 10px 125px
+  padding: 10px 0 10px 125px;
 }
 
 .skill-list li {
-  list-style-type: none;
-  display: inline-block;
   background-color: white;
+  border-radius: 10px;
+  display: inline-block;
+  font-weight: normal;
+  list-style-type: none;
   margin: 6px 5px;
   padding: 8px 12px;
-  border-radius: 10px;
-  font-weight: normal
 }
 
 .skill-description {
-  padding: 10px 20px;
+  font-weight: lighter;
   line-height: 28px;
-  font-weight: lighter
+  padding: 10px 20px;
 }
 
 .front-end-icons, .back-end-icons, .development-icons, .authentication-icons, .architecture-icons {
@@ -335,15 +335,15 @@ figure {
 }
 
 .front-end-icons img {
+  filter: grayscale(1);
   height: 55px;
   margin: 25px 10px 0 10px;
-  filter: grayscale(1);
 }
 
 .node-icon, .mongodb-icon {
+  filter: grayscale(1);
   height: 40px;
   margin: 25px 15px 0 15px;
-  filter: grayscale(1);
 }
 
 .express-icon {
@@ -352,15 +352,15 @@ figure {
 }
 
 .development-icons img {
+  filter: grayscale(1);
   height: 40px;
   margin: 25px 15px 0 15px;
-  filter: grayscale(1);
 }
 
 .authentication-icons img {
+  filter: grayscale(1);
   height: 55px;
   margin: 20px 15px 0 15px;
-  filter: grayscale(1);
 }
 
 .architecture-icons img {
@@ -377,22 +377,22 @@ figure {
 
 .about-title {
   display: inline-block;
+  font-size: 28px;
   font-weight: normal;
   padding-top: 20px;
-  font-size: 28px
 }
 
 .about-section {
-  box-shadow: inset 0 0 10px silver;
-  padding: 15px 50px;
-  margin: 15px 0;
   border-radius: 6px;
+  box-shadow: inset 0 0 10px silver;
+  margin: 15px 0;
+  padding: 15px 50px;
 }
 
 .about-description {
-  padding: 20px 0;
   font-weight: lighter;
   line-height: 28px;
+  padding: 20px 0;
 }
 
 /* INSTAGRAM FEED */
