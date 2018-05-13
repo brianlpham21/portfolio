@@ -30,6 +30,13 @@ nav {
   max-width: 1000px;
 }
 
+@media only screen and (max-width: 575px) {
+  nav {
+    position: static;
+    height: 65px;
+  }
+}
+
 /* nav bar mail section */
 
 .nav-mail-icon {
@@ -52,6 +59,26 @@ nav {
   vertical-align: middle;
 }
 
+@media only screen and (max-width: 575px) {
+  .nav-mail-icon-text {
+    display: none !important;
+  }
+
+  .nav-mail-icon {
+    padding-left: 20px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 900px) {
+  .nav-mail-icon {
+    left: 8%;
+  }
+
+  .nav-mail-icon-text {
+    display: none !important;
+  }
+}
+
 /* nav bar name section */
 
 .nav-main-name {
@@ -66,6 +93,12 @@ nav {
 
 .nav-main-name:hover {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 575px) {
+  .nav-main-name {
+    letter-spacing: 1.5px;
+  }
 }
 
 /* nav bar github & linkedin section */
@@ -112,6 +145,39 @@ nav {
   margin-right: 30px
 }
 
+@media only screen and (max-width: 575px) {
+  .nav-icon-text {
+    display: none;
+  }
+
+  .nav-icon-item {
+    padding-right: 12px;
+  }
+
+  .second-last-icon-item {
+    padding-right: 5px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 900px) {
+  .nav-icons {
+    margin-right: 2%;
+  }
+
+  .nav-icon-item {
+    opacity: 1 !important;
+    display: inline-block !important;
+  }
+
+  .nav-icon-text {
+    display: none;
+  }
+
+  .hidden-nav-icon-item {
+    display: none !important;
+  }
+}
+
 /* HIDDEN NAV BAR */
 
 .hidden-nav-bar {
@@ -140,6 +206,12 @@ nav {
   transition: 0.4s
 }
 
+@media only screen and (max-width: 575px) {
+  .hidden-nav-bar {
+    display: none;
+  }
+}
+
 /* MAIN */
 
 main {
@@ -152,6 +224,22 @@ header {
   background-image: url('./images/portfolio-banner.png');
   background-position: center;
   height: 500px;
+}
+
+@media only screen and (max-width: 575px) {
+  header {
+    background-size: 540px;
+    height: 180px;
+    background-position-y: 170px !important;
+    opacity: 1 !important;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 900px) {
+  header {
+    background-size: cover;
+    height: 370px;
+  }
 }
 
 /* DIVIDERS */
@@ -195,6 +283,18 @@ section {
   text-align: left;
   margin: auto;
   padding: 0 60px
+}
+
+@media only screen and (min-width: 576px) and (max-width: 900px) {
+  .section-container {
+    padding: 0 40px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .section-container {
+    padding: 0 15px;
+  }
 }
 
 /* WORK SECTION */
@@ -267,6 +367,99 @@ figure {
 
 .application-details li {
   padding: 11px 0
+}
+
+@media only screen and (max-width: 575px) {
+  #work, #skills, #about {
+    padding: 40px 0;
+  }
+
+  .work-section-title, .skills-section-title, .about-section-title {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .demo-github {
+    display: block;
+    margin: 0;
+  }
+
+  figure {
+    display: block;
+    margin: 25px auto;
+    width: 95%;
+    height: 95%;
+  }
+
+  .application-image {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .application-details {
+    display: block;
+    float: none;
+    font-size: 20px;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    margin-top: 0px;
+  }
+
+  .application-details li {
+    font-size: 16px;
+    padding: 1px 0;
+  }
+
+  .application-description {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 0 10px 5px 10px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 900px) {
+  #work, #skills, #about {
+    padding: 40px 0;
+  }
+
+  #work {
+    padding-bottom: 50px;
+  }
+
+  .work-section-title, .skills-section-title, .about-section-title {
+    margin-bottom: 30px;
+  }
+
+  .demo-github {
+    float: right;
+  }
+
+  figure {
+    display: block;
+    margin: 25px auto;
+  }
+
+  .application-details {
+    margin-top: 0px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+
+  .application-details li {
+    padding: 4px 0;
+    letter-spacing: 0 !important;
+  }
+
+  .application-details li:first-child {
+    padding-top: 0px;
+  }
+
+  .application-description {
+    padding-top: 0;
+  }
 }
 
 /* SKILLS SECTION */
@@ -368,6 +561,99 @@ figure {
   margin: 25px 15px 0 15px;
 }
 
+@media only screen and (max-width: 575px) {
+  .skill-section:before {
+    border-width: 15px;
+  }
+
+  .front-end-skill-section, .back-end-skill-section, .development-skill-section, .authentication-skill-section, .architecture-skill-section {
+    padding: 30px 24px;
+  }
+
+  .skill-title {
+    padding-left: 0;
+  }
+
+  .skill-icon {
+    margin-top: 2px;
+  }
+
+  .skill-section {
+    background-color: #ced2de;
+  }
+
+  .skill-list {
+    padding: 20px 0 5px 0;
+  }
+
+  .skill-list li {
+    font-size: 14px;
+    margin: 4px 2px;
+  }
+
+  .skill-description {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 4px 0;
+  }
+
+  .node-icon, .mongodb-icon {
+    display: inline-block;
+    height: 30px;
+    margin: 15px 0;
+  }
+
+  .mongodb-icon {
+    margin-bottom: 0;
+  }
+
+  .express-icon {
+    display: inline-block;
+    height: 25px;
+    margin: 15px 0 15px 15px;
+  }
+
+  .front-end-icons img, .back-end-icons img, .development-icons img , .authentication-icons img {
+    filter: grayscale(0);
+  }
+
+  .front-end-icons img {
+    height: 40px;
+    margin: 25px 5px 0 5px;
+  }
+
+  .development-icons img {
+    height: 30px;
+  }
+
+  .authentication-icons img {
+    height: 40px;
+  }
+
+  .architecture-icons img {
+    height: 50px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 900px) {
+  .skill-section {
+    background-color: #ced2de;
+  }
+
+  .skill-list li {
+    margin: 4px 2px;
+    font-size: 16px;
+  }
+
+  .skill-description {
+    padding: 10px 0;
+  }
+
+  .front-end-icons img, .back-end-icons img, .development-icons img, .authentication-icons img {
+    filter: grayscale(0);
+  }
+}
+
 /* ABOUT SECTION */
 
 .about-section-icon {
@@ -395,6 +681,17 @@ figure {
   padding: 20px 0;
 }
 
+@media only screen and (max-width: 575px) {
+  .about-section {
+    padding: 15px 30px;
+  }
+
+  .about-description {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
 /* INSTAGRAM FEED */
 
 #instagram-feed {
@@ -412,6 +709,18 @@ figure {
   height: 170px;
   margin: 0 2px;
   width: 170px;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 900px) {
+  .instafeed a:nth-child(n+5)  {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .instafeed a:nth-child(n+5)  {
+    display: none;
+  }
 }
 
 /* FOOTER */
@@ -499,190 +808,9 @@ footer {
 	100% { opacity: 1; }
 }
 
-.hidden {
-  display: none;
-}
-
-/* PHONE STYLING MEDIA QUERIES */
-
 @media only screen and (max-width: 575px) {
-  nav {
-    position: static;
-    height: 65px;
-  }
-
-  header {
-    background-size: 540px;
-    height: 180px;
-    background-position-y: 170px !important;
-    opacity: 1 !important;
-  }
-
-  .hidden-nav-bar {
-    display: none;
-  }
-
-  .nav-main-name {
-    letter-spacing: 1.5px;
-  }
-
-  .nav-mail-icon-text {
-    display: none !important;
-  }
-
-  .nav-mail-icon {
-    padding-left: 20px;
-  }
-
-  .nav-icon-text {
-    display: none;
-  }
-
-  .nav-icon-item {
-    padding-right: 12px;
-  }
-
-  .second-last-icon-item {
-    padding-right: 5px;
-  }
-
-  figure {
-    display: block;
-    margin: 25px auto;
-    width: 95%;
-    height: 95%;
-  }
-
-  .demo-github {
-    display: block;
-    margin: 0;
-  }
-
-  #work, #skills, #about {
-    padding: 40px 0;
-  }
-
-  .work-section-title, .skills-section-title, .about-section-title {
-    margin-bottom: 30px;
-    text-align: center;
-    font-size: 30px;
-  }
-
-  .application-image {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-  }
-
-  .application-details {
-    margin-top: 0px;
-    margin-right: 15px;
-    margin-bottom: 15px;
-    font-size: 20px;
-  }
-
-  .application-details li {
-    font-size: 16px;
-    padding: 1px 0;
-  }
-
-  .application-description {
-    font-size: 18px;
-    line-height: 24px;
-    padding: 0 10px 5px 10px;
-  }
-
-  .skill-section:before {
-    border-width: 15px;
-  }
-
-  .front-end-icons img, .back-end-icons img, .development-icons img , .authentication-icons img {
-    filter: grayscale(0);
-  }
-
-  .front-end-icons img {
-    height: 40px;
-    margin: 25px 5px 0 5px;
-  }
-
-  .back-end-icons .node-icon, .back-end-icons .mongodb-icon {
-    display: inline-block;
-    height: 30px;
-    margin: 15px 0;
-  }
-
-  .back-end-icons .mongodb-icon {
-    margin-bottom: 0;
-  }
-
-  .back-end-icons .express-icon {
-    display: inline-block;
-    height: 25px;
-    margin: 15px 0 15px 15px;
-  }
-
-  .development-icons img {
-    height: 30px;
-  }
-
-  .authentication-icons img {
-    height: 40px;
-  }
-
-  .architecture-icons img {
-    height: 50px;
-  }
-
-  .skill-title {
-    padding-left: 0;
-  }
-
-  .skill-icon {
-    margin-top: 2px;
-  }
-
-  .skill-section {
-    background-color: #ced2de;
-  }
-
-  .skill-list {
-    padding: 20px 0 5px 0;
-  }
-
-  .skill-list li {
-    font-size: 14px;
-    margin: 4px 2px;
-  }
-
-  .skill-description {
-    font-size: 18px;
-    line-height: 24px;
-    padding: 4px 0;
-  }
-
-  .front-end-skill-section, .back-end-skill-section, .development-skill-section, .authentication-skill-section, .architecture-skill-section {
-    padding: 30px 24px;
-  }
-
-  .application-details {
-    display: block;
-    float: none;
-  }
-
-  .section-container {
-    padding: 0 15px;
-  }
-
-  .about-section {
-    padding: 15px 30px;
-  }
-
-  .about-description {
-    font-size: 18px;
-    line-height: 24px;
-  }
-
   .footer-container {
+    opacity: 1 !important;
     text-align: center;
   }
 
@@ -690,112 +818,8 @@ footer {
     position: absolute;
     right: 50px;
   }
-
-  .instafeed a:nth-child(n+5)  {
-    display: none;
-  }
-
-  .footer-container {
-    opacity: 1 !important;
-  }
 }
 
-/* TABLET STYLING MEDIA QUERIES */
-
-@media only screen and (min-width: 576px) and (max-width: 900px) {
-  .nav-mail-icon {
-    left: 8%;
-  }
-
-  .nav-mail-icon-text {
-    display: none !important;
-  }
-
-  .nav-icons {
-    margin-right: 2%;
-  }
-
-  .nav-icon-item {
-    opacity: 1 !important;
-    display: inline-block !important;
-  }
-
-  .nav-icon-text {
-    display: none;
-  }
-
-  .hidden-nav-icon-item {
-    display: none !important;
-  }
-
-  header {
-    background-size: cover;
-    height: 370px;
-  }
-
-  #work, #skills, #about {
-    padding: 40px 0;
-  }
-
-  #work {
-    padding-bottom: 50px;
-  }
-
-  .work-section-title, .skills-section-title, .about-section-title {
-    margin-bottom: 30px;
-  }
-
-  .demo-github {
-    float: right;
-  }
-
-  figure {
-    display: block;
-    margin: 25px auto;
-  }
-
-  .section-container {
-    padding: 0 40px;
-  }
-
-  .application-details {
-    margin-top: 0px;
-    margin-right: 5px;
-    margin-bottom: 15px;
-    font-size: 20px;
-  }
-
-  .application-details li {
-    padding: 4px 0;
-    letter-spacing: 0 !important;
-  }
-
-  .application-details li:first-child {
-    padding-top: 0px;
-  }
-
-  .application-description {
-    padding-top: 0;
-  }
-
-  .skill-section {
-    background-color: #ced2de;
-  }
-
-  .skill-list li {
-    margin: 4px 2px;
-    font-size: 16px;
-  }
-
-  .skill-description {
-    padding: 10px 0;
-  }
-
-  .front-end-icons img, .back-end-icons img, .development-icons img, .authentication-icons img {
-    filter: grayscale(0);
-  }
-
-  .instafeed a:nth-child(n+5)  {
-    display: none;
-  }
+.hidden {
+  display: none;
 }
