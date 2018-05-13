@@ -1,4 +1,9 @@
+/* jQuery applies only to screens larger than 428px */
+
 if ($(window).width() > 428) {
+
+  /* Main Navigation Bar text fades out and hidden Navigation Bar Slides Down */
+
   $(window).scroll(function() {
     if ($(window).scrollTop() >= $('section').offset().top - 80) {
       $('.nav-main-name').css({'font-size': '16px', 'top': '15px','transition': '0.25s'});
@@ -33,6 +38,8 @@ if ($(window).width() > 428) {
     }
   });
 
+  /* Hidden Navigation Bar buttons */
+
   $('.nav-bar-work').on('click', function(event) {
     event.preventDefault();
     $('html, body').animate({
@@ -54,6 +61,8 @@ if ($(window).width() > 428) {
       }, 1000);
   });
 
+  /* Header opacity and parallax with scroll */
+
   $(window).scroll(function() {
     $('header').css('opacity', 1 - $(window).scrollTop() / 500);
   });
@@ -72,6 +81,8 @@ if ($(window).width() > 428) {
   };
 
   background_image_parallax($("header"));
+
+  /* Main Section Mouseover */
 
   $('#work').mouseover(function() {
     $('.work-icon').css({'filter': 'drop-shadow(0 0 3px #a3a3a3)', 'transition': '0.5s'});
@@ -103,6 +114,8 @@ if ($(window).width() > 428) {
     $('.about-section-title').css('text-shadow', 'none');
   });
 
+  /* Application details mouseover - expands letter spacing */
+
   $('.application-details li').mouseover(function() {
     $(this).css({'letter-spacing': '1px', 'transition': '0.5s'});
   });
@@ -110,6 +123,8 @@ if ($(window).width() > 428) {
   $('.application-details li').mouseout(function() {
     $(this).css('letter-spacing', '0');
   });
+
+  /* Skill Section Mouseover */
 
   $('.front-end-skill-section').mouseover(function() {
     $('.front-end-skill-icon').css({'filter': 'drop-shadow(0 0 1px #4c4c4c)','transition': '0.5s'});
@@ -119,7 +134,7 @@ if ($(window).width() > 428) {
 
   $('.front-end-skill-section').mouseout(function() {
     $('.front-end-skill-icon').css('filter', 'none');
-    $(this).css({'background-color': '#ced2de', 'box-shadow': 'none', 'transition': '0.5s'});
+    $(this).css({'background-color': '#ced2de', 'transition': '0.5s'});
   });
 
   $('.back-end-skill-section').mouseover(function() {
@@ -165,6 +180,8 @@ if ($(window).width() > 428) {
     $(this).css({'background-color': '#ced2de', 'transition': '0.5s'});
   });
 
+  /* Skill Section list items mouseover */
+
   $('.skill-list li').mouseover(function() {
     $(this).css({'box-shadow': '2px 2px 10px dimGrey', 'transition': '0.25s'});
   });
@@ -172,6 +189,8 @@ if ($(window).width() > 428) {
   $('.skill-list li').mouseout(function() {
     $(this).css({'box-shadow': 'none', 'transition': '0.25s'});
   });
+
+  /* About Section mouseover */
 
   $('.about-section').mouseover(function() {
     $(this).children('.about-title').css({'letter-spacing': '1px', 'transition': '0.5s'});
@@ -183,12 +202,17 @@ if ($(window).width() > 428) {
     $(this).css({'box-shadow': 'inset 0 0 10px silver', 'transition': '0.5s'});
   });
 
+  /* Footer container opacity appears on scroll */
+
   $(window).scroll(function() {
     if ((($(window).scrollTop() + $(window).height()) - 100) >= $('footer').offset().top) {
       $('.footer-container').css({'opacity': '1', 'transition': '2s'});
     }
   });
 }
+
+/* Main Nav Name clicks to reload window */
+
 $('.nav-main-name').click(function() {
   $(document).ready(function() {
     $(this).scrollTop(0);
@@ -196,9 +220,11 @@ $('.nav-main-name').click(function() {
   });
 });
 
+/* Scroll up arrow functionality */
+
 $('.scroll-up-arrow').click(function() {
   if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
-    window.scroll({top: 0, behavior: 'smooth'}) // first value for left offset, second value for top offset
+    window.scroll({top: 0, behavior: 'smooth'})
   } else {
     $('html').animate({
       scrollTop: '0px'
