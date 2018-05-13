@@ -495,6 +495,8 @@ figure {
   display: none
 }
 
+/* PHONE STYLING */
+
 @media only screen and (max-width: 575px) {
   nav {
     position: static;
@@ -689,6 +691,8 @@ figure {
     opacity: 1 !important;
   }
 }
+
+/* TABLET STYLING */
 
 @media only screen and (min-width: 576px) and (max-width: 900px) {
   .nav-mail-icon {
