@@ -180,6 +180,14 @@ if ($(window).width() > 428) {
     $(this).css({'background-color': '#ced2de', 'transition': '0.5s'});
   });
 
+  $('.currently-learning-skill-section').mouseover(function() {
+    $('.currently-learning-skill-icon').css({'filter': 'drop-shadow(0 0 1px #4c4c4c)', 'transition': '0.5s'});
+  });
+
+  $('.currently-learning-skill-section').mouseout(function() {
+    $('.currently-learning-skill-icon').css('filter', 'none');
+  });
+
   /* Skill Section list items mouseover */
 
   $('.skill-list li').mouseover(function() {
