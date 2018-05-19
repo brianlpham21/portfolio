@@ -187,7 +187,7 @@ if ($(window).width() > 428) {
 
   $('.currently-learning-skill-section').mouseout(function() {
     $('.currently-learning-skill-icon').css('filter', 'none');
-    $(this).css('opacity', '.85');
+    $(this).css({'opacity': '.85', 'transition': '0.5s'});
   });
 
   /* Skill Section list items mouseover */
