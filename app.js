@@ -193,7 +193,7 @@ if ($(window).width() > 428) {
   /* Skill Section list items mouseover */
 
   $('.skill-list li').mouseover(function() {
-    $(this).css({'box-shadow': '2px 2px 10px dimGrey', 'transition': '0.25s'});
+    $(this).css({'box-shadow': '4px 4px 10px rgba(0, 0, 0, .3)', 'transition': '0.25s'});
   });
 
   $('.skill-list li').mouseout(function() {
