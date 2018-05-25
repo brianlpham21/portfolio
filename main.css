@@ -207,7 +207,9 @@ nav {
 }
 
 .nav-bar-resume {
-  color: rgba(0, 0, 0, .6);
+  color: #888;
+  font-size: 20px;
+  -webkit-text-stroke: .5px #282F44;
 }
 
 @media only screen and (max-width: 575px) {
