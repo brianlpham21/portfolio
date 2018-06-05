@@ -308,6 +308,11 @@ section {
   font-weight: normal;
 }
 
+.in-development-text {
+  font-size: 25px;
+  color: darkRed;
+}
+
 .demo-github {
   margin-left: 30px;
   font-size: 17px;
