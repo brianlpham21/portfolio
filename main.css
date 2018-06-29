@@ -727,7 +727,17 @@ figure {
 }
 
 .instagram-feed-title {
-  padding: 10px 0 20px 0
+  padding: 10px 0 20px 0;
+}
+
+.instagram-feed-link {
+  text-decoration: none;
+  color: black;
+  transition: all .3s
+}
+
+.instagram-feed-link:hover {
+  color: dimGrey;
 }
 
 #instafeed img {
