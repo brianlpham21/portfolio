@@ -4,7 +4,7 @@
 }
 
 body {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   font-size: 20px;
   text-align: center;
 }
@@ -46,7 +46,7 @@ nav {
 
 .nav-mail-icon-item:hover {
   opacity: 0.5 !important;
-  transition: 0.4s !important
+  transition: 0.4s !important;
 }
 
 .nav-mail-icon-item a {
@@ -104,7 +104,7 @@ nav {
 /* nav bar github & linkedin section */
 
 .nav-icons {
-  float: right
+  float: right;
 }
 
 .nav-icon-item {
@@ -114,7 +114,7 @@ nav {
 .nav-icon-item:hover {
   cursor: pointer;
   opacity: 0.5 !important;
-  transition: 0.4s !important
+  transition: 0.4s !important;
 }
 
 .nav-icon-item a {
@@ -138,11 +138,11 @@ nav {
 .hidden-nav-icon-item:hover {
   cursor: pointer;
   opacity: 0.5 !important;
-  transition: 0.4s !important
+  transition: 0.4s !important;
 }
 
 .last-hidden {
-  margin-right: 30px
+  margin-right: 30px;
 }
 
 @media only screen and (max-width: 575px) {
@@ -203,11 +203,11 @@ nav {
 
 .hidden-nav-bar *:hover {
   color: silver;
-  transition: 0.4s
+  transition: 0.4s;
 }
 
 .nav-bar-resume {
-  color: #282F44;
+  color: #282f44;
 }
 
 @media only screen and (max-width: 575px) {
@@ -219,13 +219,13 @@ nav {
 /* MAIN */
 
 main {
-  background-color: #f7f7f7
+  background-color: #f7f7f7;
 }
 
 /* HEADER SECTION */
 
 header {
-  background-image: url('./images/portfolio-banner.png');
+  background-image: url("./images/portfolio-banner.png");
   background-position: center;
   height: 500px;
 }
@@ -275,7 +275,9 @@ section {
   padding-right: 10px;
 }
 
-.work-section-title, .skills-section-title, .about-section-title {
+.work-section-title,
+.skills-section-title,
+.about-section-title {
   font-weight: normal;
   font-size: 45px;
   letter-spacing: 2px;
@@ -286,7 +288,7 @@ section {
   max-width: 1000px;
   text-align: left;
   margin: auto;
-  padding: 0 60px
+  padding: 0 60px;
 }
 
 @media only screen and (min-width: 576px) and (max-width: 900px) {
@@ -326,16 +328,16 @@ section {
 
 .demo-github a:hover {
   color: silver;
-  transition: 0.1s
+  transition: 0.1s;
 }
 
 figure {
   background: #fff;
   display: inline-block;
-	height: 280px;
-	margin: 20px;
+  height: 280px;
+  margin: 20px;
   overflow: hidden;
-	padding: 0;
+  padding: 0;
   width: 480px;
 }
 
@@ -344,16 +346,18 @@ figure {
   height: 280px;
 }
 
-.application-image, .skill-technology-icon {
-	-webkit-transform: scale(1);
-	transform: scale(1);
-	-webkit-transition: .5s ease-in-out;
-	transition: .5s ease-in-out;
+.application-image,
+.skill-technology-icon {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
-.application-image:hover, .skill-technology-icon:hover {
-	-webkit-transform: scale(1.1);
-	transform: scale(1.1);
+.application-image:hover,
+.skill-technology-icon:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .application-details {
@@ -375,15 +379,19 @@ figure {
 }
 
 .application-details li {
-  padding: 11px 0
+  padding: 11px 0;
 }
 
 @media only screen and (max-width: 575px) {
-  #work, #skills, #about {
+  #work,
+  #skills,
+  #about {
     padding: 40px 0;
   }
 
-  .work-section-title, .skills-section-title, .about-section-title {
+  .work-section-title,
+  .skills-section-title,
+  .about-section-title {
     margin-bottom: 30px;
     text-align: center;
     font-size: 30px;
@@ -433,7 +441,9 @@ figure {
 }
 
 @media only screen and (min-width: 576px) and (max-width: 900px) {
-  #work, #skills, #about {
+  #work,
+  #skills,
+  #about {
     padding: 40px 0;
   }
 
@@ -441,7 +451,9 @@ figure {
     padding-bottom: 50px;
   }
 
-  .work-section-title, .skills-section-title, .about-section-title {
+  .work-section-title,
+  .skills-section-title,
+  .about-section-title {
     margin-bottom: 30px;
   }
 
@@ -488,16 +500,17 @@ figure {
 
 .currently-learning-skill-section {
   background-color: white;
-  opacity: .85;
+  opacity: 0.85;
 }
 
 .skill-section:before {
-  border-color: #f7f7f7 #f7f7f7 rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.3);
+  border-color: #f7f7f7 #f7f7f7 rgba(255, 255, 255, 0.3)
+    rgba(255, 255, 255, 0.3);
   border-radius: 0 0 0 5px;
   border-style: solid;
   border-width: 20px;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
-  content: '';
+  content: "";
   position: absolute;
   right: 0;
   top: 0;
@@ -536,7 +549,7 @@ figure {
 }
 
 .currently-learning-skill-section .skill-list li {
-  border: 1px solid rgba(0, 0, 0, .2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .skill-description {
@@ -545,8 +558,12 @@ figure {
   padding: 10px 20px;
 }
 
-.front-end-icons, .back-end-icons, .development-icons, .authentication-icons, .architecture-icons {
-  text-align: center
+.front-end-icons,
+.back-end-icons,
+.development-icons,
+.authentication-icons,
+.architecture-icons {
+  text-align: center;
 }
 
 .front-end-icons img {
@@ -555,7 +572,8 @@ figure {
   margin: 25px 10px 0 10px;
 }
 
-.node-icon, .mongodb-icon {
+.node-icon,
+.mongodb-icon {
   filter: grayscale(1);
   height: 40px;
   margin: 25px 15px 0 15px;
@@ -592,7 +610,11 @@ figure {
     border-width: 15px;
   }
 
-  .front-end-skill-section, .back-end-skill-section, .development-skill-section, .authentication-skill-section, .architecture-skill-section {
+  .front-end-skill-section,
+  .back-end-skill-section,
+  .development-skill-section,
+  .authentication-skill-section,
+  .architecture-skill-section {
     padding: 30px 24px;
   }
 
@@ -638,7 +660,10 @@ figure {
     margin: 15px 0 15px 15px;
   }
 
-  .front-end-icons img, .back-end-icons img, .development-icons img , .authentication-icons img {
+  .front-end-icons img,
+  .back-end-icons img,
+  .development-icons img,
+  .authentication-icons img {
     filter: grayscale(0);
   }
 
@@ -674,7 +699,10 @@ figure {
     padding: 10px 0;
   }
 
-  .front-end-icons img, .back-end-icons img, .development-icons img, .authentication-icons img {
+  .front-end-icons img,
+  .back-end-icons img,
+  .development-icons img,
+  .authentication-icons img {
     filter: grayscale(0);
   }
 }
@@ -733,7 +761,7 @@ figure {
 .instagram-feed-link {
   text-decoration: none;
   color: black;
-  transition: all .3s
+  transition: all 0.3s;
 }
 
 .instagram-feed-link:hover {
@@ -747,13 +775,13 @@ figure {
 }
 
 @media only screen and (min-width: 576px) and (max-width: 900px) {
-  .instafeed a:nth-child(n+5)  {
+  .instafeed a:nth-child(n + 5) {
     display: none;
   }
 }
 
 @media only screen and (max-width: 575px) {
-  .instafeed a:nth-child(n+5)  {
+  .instafeed a:nth-child(n + 5) {
     display: none;
   }
 }
@@ -780,13 +808,13 @@ footer {
 
 .social-media-icons a {
   color: #505050;
-  margin-right: 5px
+  margin-right: 5px;
 }
 
 .social-media-icons a:hover {
   cursor: pointer;
   opacity: 0.5;
-  transition: 0.4s
+  transition: 0.4s;
 }
 
 .footer-main-name {
@@ -806,41 +834,71 @@ footer {
 }
 
 .fa-pulse {
-	display: inline-block;
+  display: inline-block;
   animation: pulse 3.25s infinite linear;
-	-moz-animation: pulse 3.25s infinite linear;
-	-o-animation: pulse 3.25s infinite linear;
-	-webkit-animation: pulse 3.25s infinite linear;
+  -moz-animation: pulse 3.25s infinite linear;
+  -o-animation: pulse 3.25s infinite linear;
+  -webkit-animation: pulse 3.25s infinite linear;
 }
 
 @-webkit-keyframes pulse {
-	0% { opacity: 1; }
-	50% { opacity: 0; }
-	100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @-moz-keyframes pulse {
-	0% { opacity: 1; }
-	50% { opacity: 0; }
-	100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @-o-keyframes pulse {
-	0% { opacity: 1; }
-	50% { opacity: 0; }
-	100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @-ms-keyframes pulse {
-	0% { opacity: 1; }
-	50% { opacity: 0; }
-	100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes pulse {
-	0% { opacity: 1; }
-	50% { opacity: 0; }
-	100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @media only screen and (max-width: 575px) {
