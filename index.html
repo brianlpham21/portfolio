@@ -543,6 +543,7 @@
                 resolve: resolve,
                 reject: function () { resolve(undefined); },
               };
+              window.turnstile.reset(turnstileWidgetId);
               window.turnstile.execute(turnstileWidgetId);
             });
           })
