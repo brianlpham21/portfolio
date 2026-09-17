@@ -71,6 +71,7 @@
   padding: 8px 10px;
   font-size: 13.5px;
   line-height: 1.4;
+  text-align: left;
 }
 .cw-bubble.cw-user {
   align-self: flex-end;
