@@ -18,6 +18,7 @@
   <title>Brian Pham</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" type="text/css" href="widget.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
   <link rel="icon" href="./images/favicon-bold.ico">
   <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"
@@ -439,9 +440,301 @@
       <div>
   </footer>
 
+  <!-- AI Chatbot Widget -->
+  <div class="cw-widget" id="cw-widget">
+    <div id="cw-turnstile-container"></div>
+
+    <div class="cw-panel" id="cw-panel">
+      <div class="cw-head">
+        <strong>Ask about my experience</strong>
+        <button type="button" id="cw-close-btn" aria-label="Close">&times;</button>
+      </div>
+
+      <div class="cw-messages" id="cw-messages">
+        <p class="cw-empty" id="cw-empty-hint">
+          Ask a question about my resume, projects, or blog posts — answers are cited back to the source.
+        </p>
+      </div>
+
+      <form class="cw-form" id="cw-form">
+        <input class="cw-input" id="cw-input" type="text" placeholder="What did you do at your last job?" autocomplete="off" />
+        <button class="cw-send" id="cw-send-btn" type="submit">Send</button>
+      </form>
+    </div>
+
+    <button class="cw-bubble-btn" id="cw-toggle-btn" aria-label="Toggle chat" type="button">💬</button>
+  </div>
+
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="app.js"></script>
+
+  <!-- AI Chatbot Widget Logic -->
+  <script>
+    (function () {
+      // ---- Configure these three things ----
+      var API_URL = "https://rag-resume-ingestion-engine-web.vercel.app/api/ask";
+      var TURNSTILE_SITE_KEY = "0x4AAAAAAE7Bh-vNIcefECZ5"; // fill in with your real Turnstile site key
+      // ---------------------------------------
+
+      var LOADING_STAGES = [
+        "Searching resume & project content…",
+        "Reading through what I found…",
+        "Drafting an answer…",
+        "Still working on it…",
+      ];
+
+      function getOrCreateSessionId() {
+        var key = "rag-chat-session-id";
+        var id = sessionStorage.getItem(key);
+        if (!id) {
+          id = (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(16).slice(2));
+          sessionStorage.setItem(key, id);
+        }
+        return id;
+      }
+
+      // --- Turnstile (invisible, optional) ---
+      var turnstileWidgetId = null;
+      var turnstileReady = null;
+      var turnstileResolver = null;
+
+      function loadTurnstileScript() {
+        if (window.turnstile) return Promise.resolve();
+        return new Promise(function (resolve, reject) {
+          var script = document.createElement("script");
+          script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
+          script.async = true;
+          script.onload = function () { resolve(); };
+          script.onerror = function () { reject(new Error("Failed to load Turnstile")); };
+          document.head.appendChild(script);
+        });
+      }
+
+      function initTurnstile() {
+        if (!TURNSTILE_SITE_KEY) return;
+        var container = document.getElementById("cw-turnstile-container");
+        turnstileReady = loadTurnstileScript().then(function () {
+          if (!window.turnstile) return;
+          turnstileWidgetId = window.turnstile.render(container, {
+            sitekey: TURNSTILE_SITE_KEY,
+            size: "invisible",
+            execution: "execute",
+            callback: function (token) {
+              if (turnstileResolver) { turnstileResolver.resolve(token); turnstileResolver = null; }
+            },
+            "error-callback": function () {
+              if (turnstileResolver) { turnstileResolver.reject(new Error("Verification failed.")); turnstileResolver = null; }
+            },
+            "expired-callback": function () {
+              if (turnstileResolver) { turnstileResolver.reject(new Error("Verification expired.")); turnstileResolver = null; }
+            },
+          });
+        });
+      }
+
+      function getTurnstileToken() {
+        if (!TURNSTILE_SITE_KEY) return Promise.resolve(undefined);
+        return (turnstileReady || Promise.resolve())
+          .then(function () {
+            if (!window.turnstile || turnstileWidgetId === null) return undefined;
+            return new Promise(function (resolve) {
+              turnstileResolver = {
+                resolve: resolve,
+                reject: function () { resolve(undefined); },
+              };
+              window.turnstile.execute(turnstileWidgetId);
+            });
+          })
+          .catch(function () { return undefined; });
+      }
+
+      // --- API call ---
+      function askApi(question, sessionId, turnstileToken) {
+        return fetch(API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ question: question, sessionId: sessionId, turnstileToken: turnstileToken }),
+        }).then(function (res) {
+          return res.json().then(function (data) {
+            if (!res.ok) throw new Error(data.error || "Request failed with status " + res.status);
+            return data;
+          });
+        });
+      }
+
+      // --- Rendering ---
+      function escapeHtml(s) {
+        var div = document.createElement("div");
+        div.textContent = s;
+        return div.innerHTML;
+      }
+
+      function findUrlForSource(sourceFile, chunks) {
+        if (!chunks) return undefined;
+        for (var i = 0; i < chunks.length; i++) {
+          if (chunks[i].metadata && chunks[i].metadata.sourceFile === sourceFile) return chunks[i].metadata.url;
+        }
+        return undefined;
+      }
+
+      function renderSources(citations, chunks) {
+        if (!citations || citations.length === 0) return "";
+        var id = "cw-sources-" + Math.random().toString(36).slice(2);
+        var items = citations
+          .map(function (c) {
+            var url = findUrlForSource(c.sourceFile, chunks);
+            var pill = '<span class="cw-source-pill">' + escapeHtml(c.sourceFile) + "</span>";
+            var pillHtml = url
+              ? '<a href="' + escapeHtml(url) + '" target="_blank" rel="noreferrer">' + pill + "</a>"
+              : pill;
+            return (
+              '<div class="cw-source">' + pillHtml + '<span class="cw-source-quote">\u201c' + escapeHtml(c.quote) + "\u201d</span></div>"
+            );
+          })
+          .join("");
+        return (
+          '<button type="button" class="cw-sources-toggle" data-target="' + id + '">Sources (' + citations.length + ")</button>" +
+          '<div class="cw-sources-list" id="' + id + '">' + items + "</div>"
+        );
+      }
+
+      function addBubble(role, text, opts) {
+        opts = opts || {};
+        var messages = document.getElementById("cw-messages");
+        var div = document.createElement("div");
+        div.className = "cw-bubble" + (role === "user" ? " cw-user" : "") + (opts.error ? " cw-error" : "");
+
+        var textDiv = document.createElement("div");
+        textDiv.textContent = text;
+        div.appendChild(textDiv);
+
+        if (!opts.error && opts.citations) {
+          var sourcesHtml = renderSources(opts.citations, opts.retrievedChunks);
+          if (sourcesHtml) {
+            var wrapper = document.createElement("div");
+            wrapper.innerHTML = sourcesHtml;
+            div.appendChild(wrapper);
+          }
+        }
+
+        messages.appendChild(div);
+        scrollToBottom();
+      }
+
+      document.addEventListener("click", function (e) {
+        if (e.target.classList && e.target.classList.contains("cw-sources-toggle")) {
+          var btn = e.target;
+          var list = document.getElementById(btn.getAttribute("data-target"));
+          var opening = !list.classList.contains("cw-open");
+          list.classList.toggle("cw-open");
+          if (opening) {
+            btn.dataset.label = btn.textContent; // remember "Sources (n)" to restore later
+            btn.textContent = "Hide sources";
+          } else {
+            btn.textContent = btn.dataset.label;
+          }
+        }
+      });
+
+      function scrollToBottom() {
+        var messages = document.getElementById("cw-messages");
+        messages.scrollTop = messages.scrollHeight;
+      }
+
+      var typingEl = null;
+      var typingInterval = null;
+      var typingStage = 0;
+
+      function showTyping() {
+        typingStage = 0;
+        var messages = document.getElementById("cw-messages");
+        typingEl = document.createElement("div");
+        typingEl.className = "cw-typing";
+        typingEl.innerHTML =
+          '<span class="cw-typing-dots"><span></span><span></span><span></span></span>' +
+          '<span class="cw-typing-stage">' + LOADING_STAGES[0] + "</span>";
+        messages.appendChild(typingEl);
+        scrollToBottom();
+        typingInterval = setInterval(function () {
+          typingStage = Math.min(typingStage + 1, LOADING_STAGES.length - 1);
+          var stageEl = typingEl && typingEl.querySelector(".cw-typing-stage");
+          if (stageEl) stageEl.textContent = LOADING_STAGES[typingStage];
+        }, 2500);
+      }
+
+      function hideTyping() {
+        clearInterval(typingInterval);
+        if (typingEl && typingEl.parentNode) typingEl.parentNode.removeChild(typingEl);
+        typingEl = null;
+      }
+
+      // --- Wiring ---
+      function init() {
+        initTurnstile();
+
+        var sessionId = getOrCreateSessionId();
+        var toggleBtn = document.getElementById("cw-toggle-btn");
+        var closeBtn = document.getElementById("cw-close-btn");
+        var panel = document.getElementById("cw-panel");
+        var form = document.getElementById("cw-form");
+        var input = document.getElementById("cw-input");
+        var sendBtn = document.getElementById("cw-send-btn");
+        var emptyHint = document.getElementById("cw-empty-hint");
+        var isLoading = false;
+
+        toggleBtn.addEventListener("click", function () {
+          panel.classList.toggle("cw-open");
+          toggleBtn.textContent = panel.classList.contains("cw-open") ? "×" : "💬";
+        });
+        closeBtn.addEventListener("click", function () {
+          panel.classList.remove("cw-open");
+          toggleBtn.textContent = "💬";
+        });
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var question = input.value.trim();
+          if (!question || isLoading) return;
+
+          if (emptyHint) { emptyHint.remove(); }
+          addBubble("user", question);
+          input.value = "";
+          isLoading = true;
+          sendBtn.disabled = true;
+          input.disabled = true;
+          showTyping();
+
+          getTurnstileToken()
+            .then(function (token) {
+              return askApi(question, sessionId, token);
+            })
+            .then(function (result) {
+              hideTyping();
+              var text = result.confident
+                ? result.answer
+                : result.answer || "I don't have enough information in my resume/project content to answer that confidently.";
+              addBubble("assistant", text, { citations: result.citations, retrievedChunks: result.retrievedChunks });
+            })
+            .catch(function (err) {
+              hideTyping();
+              addBubble("assistant", err.message || "Something went wrong. Please try again.", { error: true });
+            })
+            .finally(function () {
+              isLoading = false;
+              sendBtn.disabled = false;
+              input.disabled = false;
+            });
+        });
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", init);
+      } else {
+        init();
+      }
+    })();
+    </script>
 
 </body>
 
