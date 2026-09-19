@@ -444,6 +444,11 @@
   <div class="cw-widget" id="cw-widget">
     <div id="cw-turnstile-container"></div>
 
+    <div class="cw-greeting" id="cw-greeting" hidden>
+      <span>Got questions about my background? Ask away &rarr;</span>
+      <button type="button" class="cw-greeting-close" id="cw-greeting-close" aria-label="Dismiss">&times;</button>
+    </div>
+
     <div class="cw-panel" id="cw-panel">
       <div class="cw-head">
         <strong>Ask about my experience</strong>
@@ -474,7 +479,7 @@
     (function () {
       // ---- Configure these three things ----
       var API_URL = "https://rag-resume-ingestion-engine-web.vercel.app/api/ask";
-      var TURNSTILE_SITE_KEY = "0x4AAAAAAE7Bh-vNIcefECZ5"; // fill in with your real Turnstile site key
+      var TURNSTILE_SITE_KEY = ""; // fill in with NEXT_PUBLIC_TURNSTILE_SITE_KEY if the backend has Turnstile configured
       // ---------------------------------------
 
       var LOADING_STAGES = [
@@ -483,6 +488,12 @@
         "Drafting an answer…",
         "Still working on it…",
       ];
+
+      // The floating bubble button alone is easy for a visitor to miss — this nudge
+      // shows once per tab (sessionStorage-gated) a few seconds after load, then
+      // never again for that session once shown or dismissed.
+      var GREETING_DELAY_MS = 4000;
+      var GREETING_STORAGE_KEY = "rag-chat-greeting-shown";
 
       function getOrCreateSessionId() {
         var key = "rag-chat-session-id";
@@ -543,6 +554,9 @@
                 resolve: resolve,
                 reject: function () { resolve(undefined); },
               };
+              // Turnstile tokens are single-use — without resetting first, .execute() on
+              // an already-executed widget just re-hands back the same (now-consumed)
+              // token, so every message after the first would fail verification.
               window.turnstile.reset(turnstileWidgetId);
               window.turnstile.execute(turnstileWidgetId);
             });
@@ -590,7 +604,7 @@
               ? '<a href="' + escapeHtml(url) + '" target="_blank" rel="noreferrer">' + pill + "</a>"
               : pill;
             return (
-              '<div class="cw-source">' + pillHtml + '<span class="cw-source-quote">\u201c' + escapeHtml(c.quote) + "\u201d</span></div>"
+              '<div class="cw-source">' + pillHtml + '<span class="cw-source-quote">“' + escapeHtml(c.quote) + "”</span></div>"
             );
           })
           .join("");
@@ -670,6 +684,35 @@
         typingEl = null;
       }
 
+      // --- Greeting bubble ---
+      function initGreeting(openPanel) {
+        var greeting = document.getElementById("cw-greeting");
+        var closeBtn = document.getElementById("cw-greeting-close");
+        if (!greeting || !closeBtn) return;
+
+        var alreadyShown = false;
+        try { alreadyShown = sessionStorage.getItem(GREETING_STORAGE_KEY) === "1"; } catch (e) {}
+        if (alreadyShown) return;
+
+        function dismissGreeting() {
+          greeting.hidden = true;
+          try { sessionStorage.setItem(GREETING_STORAGE_KEY, "1"); } catch (e) {}
+        }
+        // exposed so the toggle button can dismiss it on manual open too
+        initGreeting.dismiss = dismissGreeting;
+
+        setTimeout(function () { greeting.hidden = false; }, GREETING_DELAY_MS);
+
+        greeting.addEventListener("click", function () {
+          dismissGreeting();
+          openPanel();
+        });
+        closeBtn.addEventListener("click", function (e) {
+          e.stopPropagation();
+          dismissGreeting();
+        });
+      }
+
       // --- Wiring ---
       function init() {
         initTurnstile();
@@ -684,7 +727,15 @@
         var emptyHint = document.getElementById("cw-empty-hint");
         var isLoading = false;
 
+        function openPanel() {
+          panel.classList.add("cw-open");
+          toggleBtn.textContent = "×";
+        }
+
+        initGreeting(openPanel);
+
         toggleBtn.addEventListener("click", function () {
+          if (initGreeting.dismiss) initGreeting.dismiss();
           panel.classList.toggle("cw-open");
           toggleBtn.textContent = panel.classList.contains("cw-open") ? "×" : "💬";
         });
@@ -735,7 +786,7 @@
         init();
       }
     })();
-    </script>
+  </script>
 
 </body>
 
