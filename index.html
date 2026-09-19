@@ -444,30 +444,34 @@
   <div class="cw-widget" id="cw-widget">
     <div id="cw-turnstile-container"></div>
 
-    <div class="cw-greeting" id="cw-greeting" hidden>
+    <div class="cw-greeting cw-focusable" id="cw-greeting" role="button" tabindex="0" hidden>
       <span>Got questions about my background? Ask away &rarr;</span>
-      <button type="button" class="cw-greeting-close" id="cw-greeting-close" aria-label="Dismiss">&times;</button>
+      <button type="button" class="cw-greeting-close cw-focusable" id="cw-greeting-close" aria-label="Dismiss">&times;</button>
     </div>
 
     <div class="cw-panel" id="cw-panel">
       <div class="cw-head">
         <strong>Ask about my experience</strong>
-        <button type="button" id="cw-close-btn" aria-label="Close">&times;</button>
+        <button type="button" class="cw-focusable" id="cw-close-btn" aria-label="Close chat">&times;</button>
       </div>
 
-      <div class="cw-messages" id="cw-messages">
+      <div class="cw-messages" id="cw-messages" aria-live="polite" aria-relevant="additions">
         <p class="cw-empty" id="cw-empty-hint">
           Ask a question about my resume, projects, or blog posts — answers are cited back to the source.
         </p>
       </div>
 
+      <div class="cw-credit">
+        <a href="https://github.com/brianlpham21/rag-resume-ingestion-engine" target="_blank" rel="noreferrer" class="cw-focusable">⚡ Built with a custom RAG pipeline &middot; view code</a>
+      </div>
+
       <form class="cw-form" id="cw-form">
-        <input class="cw-input" id="cw-input" type="text" placeholder="What did you do at your last job?" autocomplete="off" />
-        <button class="cw-send" id="cw-send-btn" type="submit">Send</button>
+        <input class="cw-input cw-focusable" id="cw-input" type="text" placeholder="What did you do at your last job?" autocomplete="off" />
+        <button class="cw-send cw-focusable" id="cw-send-btn" type="submit">Send</button>
       </form>
     </div>
 
-    <button class="cw-bubble-btn" id="cw-toggle-btn" aria-label="Toggle chat" type="button">💬</button>
+    <button class="cw-bubble-btn cw-pulse cw-focusable" id="cw-toggle-btn" aria-label="Toggle chat" type="button">💬</button>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -585,6 +589,11 @@
         return div.innerHTML;
       }
 
+      // Deliberately minimal — bold (**text**) and bullet/numbered lists are the only
+      // Markdown constructs a short chat answer realistically uses. Not a general
+      // Markdown parser; anything else is left as literal (escaped) text. escapeHtml
+      // runs before any tags are introduced, so this is safe to render as HTML even
+      // though the source text isn't otherwise trusted.
       function renderMarkdownLite(text) {
         var htmlParts = [];
         var listBuffer = [];
@@ -639,6 +648,24 @@
         return htmlParts.join("");
       }
 
+      // Simulated word-by-word reveal of an already-fully-generated answer — the API
+      // returns one payload at the end (no real token streaming), but progressively
+      // revealing it reads as more "alive" than the full block appearing at once.
+      function typeText(el, text, onTick) {
+        var visible = 0;
+        var tickMs = 16;
+        var totalDurationMs = Math.min(900, Math.max(300, text.length * 8));
+        var ticks = Math.max(1, Math.round(totalDurationMs / tickMs));
+        var charsPerTick = Math.max(1, Math.ceil(text.length / ticks));
+
+        var interval = setInterval(function () {
+          visible = Math.min(text.length, visible + charsPerTick);
+          el.innerHTML = renderMarkdownLite(text.slice(0, visible));
+          if (onTick) onTick();
+          if (visible >= text.length) clearInterval(interval);
+        }, tickMs);
+      }
+
       function findUrlForSource(sourceFile, chunks) {
         if (!chunks) return undefined;
         for (var i = 0; i < chunks.length; i++) {
@@ -675,8 +702,13 @@
         div.className = "cw-bubble" + (role === "user" ? " cw-user" : "") + (opts.error ? " cw-error" : "");
 
         var textDiv = document.createElement("div");
-        textDiv.innerHTML = renderMarkdownLite(text);
         div.appendChild(textDiv);
+
+        if (role === "assistant" && !opts.error) {
+          typeText(textDiv, text, scrollToBottom);
+        } else {
+          textDiv.innerHTML = renderMarkdownLite(text);
+        }
 
         if (!opts.error && opts.citations) {
           var sourcesHtml = renderSources(opts.citations, opts.retrievedChunks);
@@ -685,6 +717,13 @@
             wrapper.innerHTML = sourcesHtml;
             div.appendChild(wrapper);
           }
+        }
+
+        if (role === "assistant" && !opts.error && typeof opts.latencyMs === "number") {
+          var latencyDiv = document.createElement("div");
+          latencyDiv.style.cssText = "font-size:10px;color:#999;margin-top:4px";
+          latencyDiv.textContent = "Answered in " + (opts.latencyMs / 1000).toFixed(1) + "s";
+          div.appendChild(latencyDiv);
         }
 
         messages.appendChild(div);
@@ -762,10 +801,19 @@
           greeting.hidden = false;
         }, GREETING_DELAY_MS);
 
+        function activateOnKey(e) {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            dismissGreeting();
+            openPanel();
+          }
+        }
+
         greeting.addEventListener("click", function () {
           dismissGreeting();
           openPanel();
         });
+        greeting.addEventListener("keydown", activateOnKey);
         closeBtn.addEventListener("click", function (e) {
           e.stopPropagation();
           dismissGreeting();
@@ -785,22 +833,63 @@
         var sendBtn = document.getElementById("cw-send-btn");
         var emptyHint = document.getElementById("cw-empty-hint");
         var isLoading = false;
+        var closeTimeoutId = null;
+        var PANEL_TRANSITION_MS = 180;
 
         function openPanel() {
+          if (closeTimeoutId) { clearTimeout(closeTimeoutId); closeTimeoutId = null; }
+          panel.style.display = "flex";
+          // Force a layout flush between setting display and adding the class below —
+          // otherwise the browser can batch both changes into one frame and skip
+          // straight to the open state instead of transitioning into it.
+          void panel.offsetWidth;
           panel.classList.add("cw-open");
           toggleBtn.textContent = "×";
+        }
+
+        function closePanel() {
+          panel.classList.remove("cw-open");
+          toggleBtn.textContent = "💬";
+          closeTimeoutId = setTimeout(function () {
+            panel.style.display = "none";
+          }, PANEL_TRANSITION_MS);
+        }
+
+        function togglePanel() {
+          if (panel.classList.contains("cw-open")) {
+            closePanel();
+          } else {
+            openPanel();
+          }
         }
 
         initGreeting(openPanel);
 
         toggleBtn.addEventListener("click", function () {
           if (initGreeting.dismiss) initGreeting.dismiss();
-          panel.classList.toggle("cw-open");
-          toggleBtn.textContent = panel.classList.contains("cw-open") ? "×" : "💬";
+          togglePanel();
         });
-        closeBtn.addEventListener("click", function () {
-          panel.classList.remove("cw-open");
-          toggleBtn.textContent = "💬";
+        closeBtn.addEventListener("click", closePanel);
+
+        // "/" opens the chat from anywhere on the page (unless the visitor is
+        // already typing somewhere else); Esc closes it.
+        document.addEventListener("keydown", function (e) {
+          var target = e.target;
+          var tag = target && target.tagName;
+          var isEditable = tag === "INPUT" || tag === "TEXTAREA" || (target && target.isContentEditable);
+
+          if (e.key === "/" && !isEditable && !e.metaKey && !e.ctrlKey && !e.altKey) {
+            e.preventDefault();
+            if (panel.classList.contains("cw-open")) {
+              input.focus();
+            } else {
+              if (initGreeting.dismiss) initGreeting.dismiss();
+              openPanel();
+              input.focus();
+            }
+          } else if (e.key === "Escape" && panel.classList.contains("cw-open")) {
+            closePanel();
+          }
         });
 
         form.addEventListener("submit", function (e) {
@@ -825,7 +914,7 @@
               var text = result.confident
                 ? result.answer
                 : result.answer || "I don't have enough information in my resume/project content to answer that confidently.";
-              addBubble("assistant", text, { citations: result.citations, retrievedChunks: result.retrievedChunks });
+              addBubble("assistant", text, { citations: result.citations, retrievedChunks: result.retrievedChunks, latencyMs: result.latencyMs });
             })
             .catch(function (err) {
               hideTyping();
@@ -835,6 +924,8 @@
               isLoading = false;
               sendBtn.disabled = false;
               input.disabled = false;
+              // Disabling the input drops focus — restore it so the visitor can keep
+              // typing their next question without clicking back into the field.
               input.focus();
             });
         });

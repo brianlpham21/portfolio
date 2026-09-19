@@ -26,9 +26,21 @@
   flex-direction: column;
   margin-bottom: 12px;
   overflow: hidden;
+  opacity: 0;
+  transform: translateY(8px) scale(0.98);
+  transform-origin: bottom right;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
 }
 .cw-panel.cw-open {
-  display: flex;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .cw-panel {
+    transition: none;
+  }
 }
 
 .cw-head {
@@ -71,13 +83,11 @@
   padding: 8px 10px;
   font-size: 13.5px;
   line-height: 1.4;
-  text-align: left;
 }
 .cw-bubble.cw-user {
   align-self: flex-end;
   background: #282f45;
   color: #fff;
-  text-align: end;
 }
 .cw-bubble.cw-error {
   background: #fee2e2;
@@ -216,12 +226,47 @@
 .cw-bubble-btn:hover {
   opacity: 0.85;
 }
+.cw-bubble-btn.cw-pulse {
+  animation: cw-pulse 1.4s ease-in-out 2;
+  animation-delay: 0.6s;
+}
+@keyframes cw-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cw-bubble-btn.cw-pulse {
+    animation: none;
+  }
+}
+
+.cw-focusable:focus-visible {
+  outline: 2px solid #282f45;
+  outline-offset: 2px;
+}
+
+.cw-credit {
+  padding: 4px 12px 8px;
+  border-top: 1px solid #eee;
+  text-align: center;
+}
+.cw-credit a {
+  font-size: 10px;
+  color: #999;
+  text-decoration: none;
+}
 
 .cw-greeting {
   display: flex;
+  align-items: flex-start;
   gap: 2px;
   width: fit-content;
-  max-width: 220px;
+  max-width: 240px;
   background: #fff;
   color: #111;
   border-radius: 12px;
