@@ -585,6 +585,60 @@
         return div.innerHTML;
       }
 
+      function renderMarkdownLite(text) {
+        var htmlParts = [];
+        var listBuffer = [];
+        var listType = null;
+        var paragraphBuffer = [];
+
+        function applyInline(line) {
+          return escapeHtml(line).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+        }
+
+        function flushList() {
+          if (listType && listBuffer.length > 0) {
+            htmlParts.push("<" + listType + ">" + listBuffer.map(function (item) { return "<li>" + item + "</li>"; }).join("") + "</" + listType + ">");
+          }
+          listBuffer = [];
+          listType = null;
+        }
+
+        function flushParagraph() {
+          if (paragraphBuffer.length > 0) {
+            htmlParts.push('<p style="margin:0 0 6px 0">' + paragraphBuffer.join("<br>") + "</p>");
+          }
+          paragraphBuffer = [];
+        }
+
+        text.split("\n").forEach(function (rawLine) {
+          var line = rawLine.trim();
+          var bulletMatch = /^[-*]\s+(.*)/.exec(line);
+          var numberedMatch = /^\d+\.\s+(.*)/.exec(line);
+
+          if (bulletMatch) {
+            flushParagraph();
+            if (listType !== "ul") flushList();
+            listType = "ul";
+            listBuffer.push(applyInline(bulletMatch[1]));
+          } else if (numberedMatch) {
+            flushParagraph();
+            if (listType !== "ol") flushList();
+            listType = "ol";
+            listBuffer.push(applyInline(numberedMatch[1]));
+          } else if (line === "") {
+            flushList();
+            flushParagraph();
+          } else {
+            flushList();
+            paragraphBuffer.push(applyInline(line));
+          }
+        });
+        flushList();
+        flushParagraph();
+
+        return htmlParts.join("");
+      }
+
       function findUrlForSource(sourceFile, chunks) {
         if (!chunks) return undefined;
         for (var i = 0; i < chunks.length; i++) {
@@ -621,7 +675,7 @@
         div.className = "cw-bubble" + (role === "user" ? " cw-user" : "") + (opts.error ? " cw-error" : "");
 
         var textDiv = document.createElement("div");
-        textDiv.textContent = text;
+        textDiv.innerHTML = renderMarkdownLite(text);
         div.appendChild(textDiv);
 
         if (!opts.error && opts.citations) {
