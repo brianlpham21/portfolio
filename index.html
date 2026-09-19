@@ -748,14 +748,19 @@
         try { alreadyShown = sessionStorage.getItem(GREETING_STORAGE_KEY) === "1"; } catch (e) {}
         if (alreadyShown) return;
 
+        var dismissed = false;
         function dismissGreeting() {
+          dismissed = true;
           greeting.hidden = true;
           try { sessionStorage.setItem(GREETING_STORAGE_KEY, "1"); } catch (e) {}
         }
         // exposed so the toggle button can dismiss it on manual open too
         initGreeting.dismiss = dismissGreeting;
 
-        setTimeout(function () { greeting.hidden = false; }, GREETING_DELAY_MS);
+        setTimeout(function () {
+          if (dismissed) return;
+          greeting.hidden = false;
+        }, GREETING_DELAY_MS);
 
         greeting.addEventListener("click", function () {
           dismissGreeting();
