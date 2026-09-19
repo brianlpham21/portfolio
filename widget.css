@@ -75,7 +75,7 @@
 }
 .cw-bubble.cw-user {
   align-self: flex-end;
-  background: #5a86ad;
+  background: #0e6297;
   color: #fff;
   text-align: end;
 }
@@ -87,7 +87,7 @@
 .cw-sources-toggle {
   background: none;
   border: none;
-  color: #5a86ad;
+  color: #0e6297;
   font-size: 12px;
   cursor: pointer;
   padding: 0;
@@ -187,7 +187,7 @@
   font-family: inherit;
 }
 .cw-send {
-  background: #5a86ad;
+  background: #0e6297;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -204,7 +204,7 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: #5a86ad;
+  background: #0e6297;
   color: #fff;
   border: none;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
