@@ -219,10 +219,9 @@
 
 .cw-greeting {
   display: flex;
-  align-items: flex-start;
   gap: 2px;
   width: fit-content;
-  max-width: 240px;
+  max-width: 220px;
   background: #fff;
   color: #111;
   border-radius: 12px;
