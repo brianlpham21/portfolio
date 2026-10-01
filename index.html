@@ -715,7 +715,7 @@
         opts = opts || {};
         var messages = document.getElementById("cw-messages");
         var div = document.createElement("div");
-        div.className = "cw-bubble" + (role === "user" ? " cw-user" : "") + (opts.error ? " cw-error" : "");
+        div.className = "cw-bubble" + (role === "user" ? " cw-user" : "") + (opts.error ? " cw-error" : "") + (opts.notice ? " cw-notice" : "");
 
         var textDiv = document.createElement("div");
         div.appendChild(textDiv);
@@ -931,9 +931,20 @@
                 ? result.answer
                 : result.answer || "I don't have enough information in my resume/project content to answer that confidently.";
               addBubble("assistant", text, { citations: result.citations, retrievedChunks: result.retrievedChunks, latencyMs: result.latencyMs });
+
+              // This answer just used up the session's last allowed question —
+              // surface that now, right alongside the answer, and drop the stored
+              // session id so a refresh (as the notice itself suggests) actually
+              // starts a fresh one instead of sessionStorage quietly handing back
+              // the same one.
+              if (result.sessionLimitReached && result.sessionLimitMessage) {
+                addBubble("assistant", result.sessionLimitMessage, { notice: true });
+                clearSessionId();
+              }
             })
             .catch(function (err) {
               hideTyping();
+              if (err.code === "session_quota_exceeded") clearSessionId();
               addBubble("assistant", err.message || "Something went wrong. Please try again.", { error: true });
             })
             .finally(function () {

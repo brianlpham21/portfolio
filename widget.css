@@ -95,6 +95,10 @@
   background: #fee2e2;
   color: #991b1b;
 }
+.cw-bubble.cw-notice {
+  background: #eff6ff;
+  color: #1e3a8a;
+}
 
 .cw-sources-toggle {
   background: none;
