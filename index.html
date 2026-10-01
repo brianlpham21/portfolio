@@ -499,14 +499,23 @@
       var GREETING_DELAY_MS = 4000;
       var GREETING_STORAGE_KEY = "rag-chat-greeting-shown";
 
+      var SESSION_STORAGE_KEY = "rag-chat-session-id";
+
       function getOrCreateSessionId() {
-        var key = "rag-chat-session-id";
-        var id = sessionStorage.getItem(key);
+        var id = sessionStorage.getItem(SESSION_STORAGE_KEY);
         if (!id) {
           id = (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(16).slice(2));
-          sessionStorage.setItem(key, id);
+          sessionStorage.setItem(SESSION_STORAGE_KEY, id);
         }
         return id;
+      }
+
+      // Drops the stored session id so the next page load mints a fresh one.
+      // sessionStorage otherwise survives a plain refresh (only cleared when the
+      // tab closes), so this is what makes "refresh the page to start a new
+      // session" — shown once the per-session question quota is hit — actually true.
+      function clearSessionId() {
+        try { sessionStorage.removeItem(SESSION_STORAGE_KEY); } catch (e) {}
       }
 
       // --- Turnstile (invisible, optional) ---
@@ -576,7 +585,14 @@
           body: JSON.stringify({ question: question, sessionId: sessionId, turnstileToken: turnstileToken }),
         }).then(function (res) {
           return res.json().then(function (data) {
-            if (!res.ok) throw new Error(data.error || "Request failed with status " + res.status);
+            if (!res.ok) {
+              // Carries the server's machine-readable `code` (e.g.
+              // "session_quota_exceeded") alongside the message, so the caller can
+              // react to *why* a request failed without parsing the error text.
+              var err = new Error(data.error || "Request failed with status " + res.status);
+              err.code = data.code;
+              throw err;
+            }
             return data;
           });
         });
