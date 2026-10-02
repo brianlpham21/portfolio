@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Avant Garde";
+  src: url("./fonts/avantgarde.woff2") format("woff2");
+  font-weight: normal;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -225,23 +232,60 @@ main {
 /* HEADER SECTION */
 
 header {
-  background-image: url("./images/portfolio-banner.png");
-  background-position: center;
+  align-items: center;
+  background-color: #282f44;
+  color: white;
+  display: flex;
   height: 500px;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 67px;
+}
+
+/* All banner sizes are in em so the whole lockup scales together */
+.banner-content {
+  align-items: center;
+  display: flex;
+  font-family: "Avant Garde", "Didact Gothic", "Century Gothic", sans-serif;
+  font-size: min(146px, 14vw);
+  opacity: 0.9;
+}
+
+/* Squash the lockup vertically; applied to the children because app.js
+   sets transform on .banner-content for the parallax effect */
+.banner-hello,
+.banner-tagline {
+  transform: scaleY(0.9);
+}
+
+.banner-hello {
+  font-size: 1em;
+  font-weight: normal;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.banner-tagline {
+  border-left: max(1px, 0.014em) solid white;
+  font-size: 0.205em;
+  letter-spacing: 0.06em;
+  line-height: 1.27;
+  margin-left: 1.15em;
+  padding: 0.2em 0 0.2em 1.3em;
+  text-align: left;
+  white-space: nowrap;
+  word-spacing: -0.05em;
 }
 
 @media only screen and (max-width: 575px) {
   header {
-    background-size: 540px;
     height: 180px;
-    background-position-y: 170px !important;
     opacity: 1 !important;
   }
 }
 
 @media only screen and (min-width: 576px) and (max-width: 900px) {
   header {
-    background-size: cover;
     height: 370px;
   }
 }

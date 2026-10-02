@@ -67,20 +67,18 @@ if ($(window).width() > 428) {
     $('header').css('opacity', 1 - $(window).scrollTop() / 500);
   });
 
-  let background_image_parallax = function($object, multiplier) {
+  let banner_parallax = function($object, multiplier) {
     multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.5;
   	multiplier = 1 - multiplier;
     let $doc = $(document);
-    $object.css({"background-attatchment" : "fixed"});
 
   	$(window).scroll(function() {
-  	  let from_top = $doc.scrollTop(),
-  	      bg_css = 'center ' +(multiplier * from_top) + 'px';
-  	  $object.css({"background-position": bg_css });
+  	  let from_top = $doc.scrollTop();
+  	  $object.css({"transform": 'translateY(' + (multiplier * from_top) + 'px)'});
     });
   };
 
-  background_image_parallax($("header"));
+  banner_parallax($(".banner-content"));
 
   /* Main Section Mouseover */
 
