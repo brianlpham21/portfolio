@@ -39,8 +39,11 @@ nav {
 
 @media only screen and (max-width: 575px) {
   nav {
-    position: static;
     height: 65px;
+  }
+
+  nav.nav-scrolled {
+    border-bottom: 1px solid #ddd;
   }
 }
 
@@ -278,11 +281,11 @@ header {
 }
 
 @media only screen and (max-width: 575px) {
-  /* The nav is static on mobile, so the header doesn't need to clear it */
+  /* 65px clears the fixed mobile nav, leaving a 180px visible banner */
   header {
-    height: 180px;
+    height: 245px;
     opacity: 1 !important;
-    padding-top: 0;
+    padding-top: 65px;
   }
 }
 

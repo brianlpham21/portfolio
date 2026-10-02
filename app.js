@@ -219,6 +219,12 @@ if ($(window).width() > 428) {
   });
 }
 
+/* Nav bottom border once scrolled past 200px (styled for mobile only) */
+
+$(window).scroll(function() {
+  $('nav').toggleClass('nav-scrolled', $(window).scrollTop() > 200);
+});
+
 /* Main Nav Name clicks to reload window */
 
 $('.nav-main-name').click(function() {
