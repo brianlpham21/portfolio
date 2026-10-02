@@ -624,36 +624,36 @@ figure {
 
 .front-end-icons img {
   filter: grayscale(1);
-  height: 55px;
+  height: 45px;
   margin: 25px 10px 0 10px;
 }
 
 .node-icon,
 .mongodb-icon {
   filter: grayscale(1);
-  height: 40px;
+  height: 32px;
   margin: 25px 15px 0 15px;
 }
 
 .express-icon {
-  height: 30px;
+  height: 24px;
   margin: 25px 15px 0 15px;
 }
 
 .development-icons img {
   filter: grayscale(1);
-  height: 40px;
+  height: 32px;
   margin: 25px 15px 0 15px;
 }
 
 .authentication-icons img {
   filter: grayscale(1);
-  height: 55px;
+  height: 45px;
   margin: 20px 15px 0 15px;
 }
 
 .architecture-icons img {
-  height: 80px;
+  height: 65px;
   margin: 25px 15px 0 15px;
 }
 
@@ -701,20 +701,20 @@ figure {
 
   .node-icon {
     display: inline-block;
-    height: 30px;
+    height: 24px;
     margin: 15px 0;
   }
 
   .mongodb-icon {
     display: inline-block;
-    height: 30px;
+    height: 24px;
     margin: 15px 0;
     margin-bottom: 0;
   }
 
   .express-icon {
     display: inline-block;
-    height: 25px;
+    height: 20px;
     margin: 15px 0 15px 15px;
   }
 
@@ -726,20 +726,20 @@ figure {
   }
 
   .front-end-icons img {
-    height: 40px;
+    height: 32px;
     margin: 25px 5px 0 5px;
   }
 
   .development-icons img {
-    height: 30px;
+    height: 24px;
   }
 
   .authentication-icons img {
-    height: 40px;
+    height: 32px;
   }
 
   .architecture-icons img {
-    height: 50px;
+    height: 40px;
   }
 }
 
