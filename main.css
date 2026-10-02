@@ -278,9 +278,11 @@ header {
 }
 
 @media only screen and (max-width: 575px) {
+  /* The nav is static on mobile, so the header doesn't need to clear it */
   header {
     height: 180px;
     opacity: 1 !important;
+    padding-top: 0;
   }
 }
 
