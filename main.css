@@ -446,6 +446,11 @@ figure {
     font-size: 30px;
   }
 
+  /* Match the 10px inset of the details and description below */
+  .application-title {
+    padding: 0 10px;
+  }
+
   .demo-github {
     display: block;
     margin: 0;
