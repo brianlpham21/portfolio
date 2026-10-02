@@ -372,9 +372,9 @@ figure {
 }
 
 .application-description {
-  font-size: 20px;
+  font-size: 17px;
   font-weight: lighter;
-  line-height: 28px;
+  line-height: 24px;
   padding: 5px 20px;
 }
 
@@ -434,8 +434,8 @@ figure {
   }
 
   .application-description {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 22px;
     padding: 0 10px 5px 10px;
   }
 }
@@ -542,10 +542,11 @@ figure {
   background-color: white;
   border-radius: 10px;
   display: inline-block;
+  font-size: 16px;
   font-weight: normal;
   list-style-type: none;
-  margin: 6px 5px;
-  padding: 8px 12px;
+  margin: 5px 4px;
+  padding: 6px 10px;
 }
 
 .currently-learning-skill-section .skill-list li {
@@ -553,8 +554,9 @@ figure {
 }
 
 .skill-description {
+  font-size: 17px;
   font-weight: lighter;
-  line-height: 28px;
+  line-height: 24px;
   padding: 10px 20px;
 }
 
@@ -632,13 +634,13 @@ figure {
   }
 
   .skill-list li {
-    font-size: 14px;
+    font-size: 13px;
     margin: 4px 2px;
   }
 
   .skill-description {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 22px;
     padding: 4px 0;
   }
 
@@ -693,7 +695,7 @@ figure {
 
   .skill-list li {
     margin: 4px 2px;
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .skill-description {
@@ -730,8 +732,9 @@ figure {
 }
 
 .about-description {
+  font-size: 17px;
   font-weight: lighter;
-  line-height: 28px;
+  line-height: 24px;
   padding: 20px 0;
 }
 
@@ -741,8 +744,8 @@ figure {
   }
 
   .about-description {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 22px;
   }
 }
 
