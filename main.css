@@ -617,6 +617,7 @@ figure {
 .front-end-icons,
 .back-end-icons,
 .development-icons,
+.ai-icons,
 .authentication-icons,
 .architecture-icons {
   text-align: center;
@@ -642,6 +643,11 @@ figure {
 
 .development-icons img {
   filter: grayscale(1);
+  height: 32px;
+  margin: 25px 15px 0 15px;
+}
+
+.ai-icons img {
   height: 32px;
   margin: 25px 15px 0 15px;
 }
