@@ -114,11 +114,11 @@ if ($(window).width() > 428) {
 
   /* Application details mouseover - expands letter spacing */
 
-  $('.application-details li').mouseover(function() {
+  $('.application-details li:not(:has(strong))').mouseover(function() {
     $(this).css({'letter-spacing': '1px', 'transition': '0.5s'});
   });
 
-  $('.application-details li').mouseout(function() {
+  $('.application-details li:not(:has(strong))').mouseout(function() {
     $(this).css('letter-spacing', '0');
   });
 
