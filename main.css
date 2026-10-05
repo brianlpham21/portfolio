@@ -557,25 +557,6 @@ figure {
   opacity: 0.85;
 }
 
-.skill-section:before {
-  border-color: #f7f7f7 #f7f7f7 rgba(255, 255, 255, 0.3)
-    rgba(255, 255, 255, 0.3);
-  border-radius: 0 0 0 5px;
-  border-style: solid;
-  border-width: 20px;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: border-width 0.75s;
-  width: 0;
-}
-
-.skill-section:hover:before {
-  border-width: 0px;
-}
-
 .skill-icon {
   color: #444;
   float: left;
@@ -666,10 +647,6 @@ figure {
 @media only screen and (max-width: 575px) {
   .skill-section {
     background-color: #ced2de;
-  }
-
-  .skill-section:before {
-    border-width: 15px;
   }
 
   .front-end-skill-section,
