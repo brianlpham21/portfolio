@@ -245,3 +245,11 @@ $('.scroll-up-arrow').click(function() {
       }, 1200);
   }
 });
+
+/* Skill sections collapse/expand */
+
+$('.skill-toggle').on('click', function() {
+  var $section = $(this).closest('.skill-section');
+  var isOpen = $section.toggleClass('is-open').hasClass('is-open');
+  $(this).attr('aria-expanded', isOpen);
+});

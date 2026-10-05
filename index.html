@@ -251,37 +251,46 @@
     <section id='skills'>
       <div class='section-container'>
         <h2 class='skills-section-title'><i class="fas fa-code section-icon skills-icon"></i>TECHNICAL SKILLS</h2>
-        <div class='skill-section front-end-skill-section'>
-          <i class='fas fa-desktop fa-3x skill-icon front-end-skill-icon'></i>
-          <h3 class='skill-title'>Front-End Development</h3>
-          <ul class='skill-list'>
-            <li>React</li>
-            <li>Next.js</li>
-            <li>TypeScript</li>
-            <li>Redux</li>
-            <li>React Query</li>
-            <li>Chakra UI/Material UI</li>
-            <li>Tailwind CSS</li>
-            <li>Bootstrap</li>
-            <li>SASS</li>
-            <li>Adobe Photoshop</li>
-            <li>Adobe Illustrator</li>
-            <li>Adobe InDesign</li>
-            <li>HTML5/CSS3/JavaScript</li>
-            <li>jQuery</li>
-          </ul>
-          <p class='skill-description'>Considered one of my personal strengths,
-            I am proficient in the development of intuitive and
-            aesthetic webpages & web applications that are both interactive and
-            responsive. I hold a strong understanding of the HTML, CSS, and JavaScript
-            languages; with a working knowledge of React and Redux for full-stack
-            applications.</p>
-          <div class='front-end-icons'>
-            <img src='./images/html5.png' class='skill-technology-icon' />
-            <img src='./images/css3.png' class='skill-technology-icon' />
-            <img src='./images/javascript.png' class='skill-technology-icon' />
-            <img src='./images/react.png' class='skill-technology-icon' />
-            <img src='./images/redux.png' class='skill-technology-icon' />
+        <div class='skill-section front-end-skill-section is-open'>
+          <h3 class='skill-heading'>
+            <button type='button' class='skill-toggle' aria-expanded='true' aria-controls='front-end-skill-body'>
+              <i class='fas fa-desktop skill-icon front-end-skill-icon'></i>
+              <span class='skill-title'>Front-End Development</span>
+              <i class='fas fa-chevron-down skill-chevron'></i>
+            </button>
+          </h3>
+          <div class='skill-body' id='front-end-skill-body'>
+            <div class='skill-body-inner'>
+              <ul class='skill-list'>
+                <li>React</li>
+                <li>Next.js</li>
+                <li>TypeScript</li>
+                <li>Redux</li>
+                <li>React Query</li>
+                <li>Chakra UI/Material UI</li>
+                <li>Tailwind CSS</li>
+                <li>Bootstrap</li>
+                <li>SASS</li>
+                <li>Adobe Photoshop</li>
+                <li>Adobe Illustrator</li>
+                <li>Adobe InDesign</li>
+                <li>HTML5/CSS3/JavaScript</li>
+                <li>jQuery</li>
+              </ul>
+              <p class='skill-description'>Considered one of my personal strengths,
+                I am proficient in the development of intuitive and
+                aesthetic webpages & web applications that are both interactive and
+                responsive. I hold a strong understanding of the HTML, CSS, and JavaScript
+                languages; with a working knowledge of React and Redux for full-stack
+                applications.</p>
+              <div class='front-end-icons'>
+                <img src='./images/html5.png' class='skill-technology-icon' />
+                <img src='./images/css3.png' class='skill-technology-icon' />
+                <img src='./images/javascript.png' class='skill-technology-icon' />
+                <img src='./images/react.png' class='skill-technology-icon' />
+                <img src='./images/redux.png' class='skill-technology-icon' />
+              </div>
+            </div>
           </div>
         </div>
         <!-- <div class='skill-section back-end-skill-section'>
@@ -306,78 +315,105 @@
           </div>
         </div> -->
         <div class='skill-section development-skill-section'>
-          <i class='far fa-keyboard fa-3x skill-icon development-skill-icon'></i>
-          <h3 class='skill-title'>Development Environment</h3>
-          <ul class='skill-list'>
-            <li>Git</li>
-            <li>npm</li>
-            <li>Webpack</li>
-            <li>React Testing Library</li>
-            <li>Jest</li>
-            <li>Enzyme</li>
-            <li>Heroku</li>
-            <li>Netlify</li>
-            <li>Vercel</li>
-          </ul>
-          <p class='skill-description'>Through development, trouble-shooting errors
-            and analysis of front-end elements are managed through Chrome Dev Tools.
-            Basic and advanced web application features are tested using
-            Jest and React Testing Library. These tests run as part of continuous
-            integration before each deployment to Heroku, Netlify, and/or Vercel.</p>
-          <div class='development-icons'>
-            <img src='./images/npm.png' class='skill-technology-icon' />
-            <img src='./images/heroku.png' class='skill-technology-icon' />
-            <img src='./images/netlify.png' class='skill-technology-icon' />
-            <img src='./images/vercel.svg' alt='Vercel' class='skill-technology-icon' />
+          <h3 class='skill-heading'>
+            <button type='button' class='skill-toggle' aria-expanded='false' aria-controls='development-skill-body'>
+              <i class='far fa-keyboard skill-icon development-skill-icon'></i>
+              <span class='skill-title'>Development Environment</span>
+              <i class='fas fa-chevron-down skill-chevron'></i>
+            </button>
+          </h3>
+          <div class='skill-body' id='development-skill-body'>
+            <div class='skill-body-inner'>
+              <ul class='skill-list'>
+                <li>Git</li>
+                <li>npm</li>
+                <li>Webpack</li>
+                <li>React Testing Library</li>
+                <li>Jest</li>
+                <li>Enzyme</li>
+                <li>Heroku</li>
+                <li>Netlify</li>
+                <li>Vercel</li>
+              </ul>
+              <p class='skill-description'>Through development, trouble-shooting errors
+                and analysis of front-end elements are managed through Chrome Dev Tools.
+                Basic and advanced web application features are tested using
+                Jest and React Testing Library. These tests run as part of continuous
+                integration before each deployment to Heroku, Netlify, and/or Vercel.</p>
+              <div class='development-icons'>
+                <img src='./images/npm.png' class='skill-technology-icon' />
+                <img src='./images/heroku.png' class='skill-technology-icon' />
+                <img src='./images/netlify.png' class='skill-technology-icon' />
+                <img src='./images/vercel.svg' alt='Vercel' class='skill-technology-icon' />
+              </div>
+            </div>
           </div>
         </div>
         <div class='skill-section ai-skill-section'>
-          <i class='fas fa-microchip fa-3x skill-icon ai-skill-icon'></i>
-          <h3 class='skill-title'>AI & LLM Integration</h3>
-          <ul class='skill-list'>
-            <li>OpenAI API</li>
-            <li>Anthropic API</li>
-            <li>Google Gemini API</li>
-            <li>Mistral API</li>
-          </ul>
-          <p class='skill-description'>I build AI-powered features into web
-            applications by integrating large language model APIs from OpenAI,
-            Anthropic, Google Gemini, and Mistral. My experience includes prompt
-            design, streaming chat responses, structured outputs, and tool/function
-            calling, along with handling rate limits, usage caps, and API keys
-            securely on the server side. I choose models based on the cost, speed,
-            and quality each feature needs.</p>
-          <div class='ai-icons'>
-            <img src='./images/openai.svg' alt='OpenAI' class='skill-technology-icon' />
-            <img src='./images/anthropic.svg' alt='Anthropic' class='skill-technology-icon' />
-            <img src='./images/gemini.svg' alt='Google Gemini' class='skill-technology-icon' />
-            <img src='./images/mistral.svg' alt='Mistral' class='skill-technology-icon' />
+          <h3 class='skill-heading'>
+            <button type='button' class='skill-toggle' aria-expanded='false' aria-controls='ai-skill-body'>
+              <i class='fas fa-microchip skill-icon ai-skill-icon'></i>
+              <span class='skill-title'>AI & LLM Integration</span>
+              <i class='fas fa-chevron-down skill-chevron'></i>
+            </button>
+          </h3>
+          <div class='skill-body' id='ai-skill-body'>
+            <div class='skill-body-inner'>
+              <ul class='skill-list'>
+                <li>OpenAI API</li>
+                <li>Anthropic API</li>
+                <li>Google Gemini API</li>
+                <li>Mistral API</li>
+              </ul>
+              <p class='skill-description'>I build AI-powered features into web
+                applications by integrating large language model APIs from OpenAI,
+                Anthropic, Google Gemini, and Mistral. My experience includes prompt
+                design, streaming chat responses, structured outputs, and tool/function
+                calling, along with handling rate limits, usage caps, and API keys
+                securely on the server side. I choose models based on the cost, speed,
+                and quality each feature needs.</p>
+              <div class='ai-icons'>
+                <img src='./images/openai.svg' alt='OpenAI' class='skill-technology-icon' />
+                <img src='./images/anthropic.svg' alt='Anthropic' class='skill-technology-icon' />
+                <img src='./images/gemini.svg' alt='Google Gemini' class='skill-technology-icon' />
+                <img src='./images/mistral.svg' alt='Mistral' class='skill-technology-icon' />
+              </div>
+            </div>
           </div>
         </div>
         <div class='skill-section architecture-skill-section'>
-          <i class='fas fa-clipboard-list fa-3x skill-icon architecture-skill-icon'></i>
-          <h3 class='skill-title'>Architecture & Authentication</h3>
-          <ul class='skill-list'>
-            <li>Responsive Web Design</li>
-            <li>Mobile-First Development</li>
-            <li>Accessibility</li>
-            <li>Cross-Browser Compatibility</li>
-            <li>NextAuth.js</li>
-            <li>OAuth 2.0</li>
-            <li>JWT</li>
-            <li>Google/GitHub Sign-In</li>
-            <li>Session Management</li>
-            <li>Role-Based Access Control</li>
-          </ul>
-          <p class='skill-description'>With more than half of web traffic coming
-            from mobile devices, I build every project mobile-first, with responsive
-            and accessible design that works across browsers, tablets, and desktops.
-            I also integrate secure authentication flows using NextAuth.js and OAuth
-            providers such as Google and GitHub, implementing user login, session
-            management, and role-based access control with JWTs and security best
-            practices.</p>
-          <div class='architecture-icons'>
-            <img src='./images/mobile-first.png' class='skill-technology-icon' />
+          <h3 class='skill-heading'>
+            <button type='button' class='skill-toggle' aria-expanded='false' aria-controls='architecture-skill-body'>
+              <i class='fas fa-clipboard-list skill-icon architecture-skill-icon'></i>
+              <span class='skill-title'>Architecture & Authentication</span>
+              <i class='fas fa-chevron-down skill-chevron'></i>
+            </button>
+          </h3>
+          <div class='skill-body' id='architecture-skill-body'>
+            <div class='skill-body-inner'>
+              <ul class='skill-list'>
+                <li>Responsive Web Design</li>
+                <li>Mobile-First Development</li>
+                <li>Accessibility</li>
+                <li>Cross-Browser Compatibility</li>
+                <li>NextAuth.js</li>
+                <li>OAuth 2.0</li>
+                <li>JWT</li>
+                <li>Google/GitHub Sign-In</li>
+                <li>Session Management</li>
+                <li>Role-Based Access Control</li>
+              </ul>
+              <p class='skill-description'>With more than half of web traffic coming
+                from mobile devices, I build every project mobile-first, with responsive
+                and accessible design that works across browsers, tablets, and desktops.
+                I also integrate secure authentication flows using NextAuth.js and OAuth
+                providers such as Google and GitHub, implementing user login, session
+                management, and role-based access control with JWTs and security best
+                practices.</p>
+              <div class='architecture-icons'>
+                <img src='./images/mobile-first.png' class='skill-technology-icon' />
+              </div>
+            </div>
           </div>
         </div>
         <!-- <div class='skill-section currently-learning-skill-section'>
