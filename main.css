@@ -565,7 +565,7 @@ figure {
   cursor: pointer;
   display: flex;
   font: inherit;
-  padding: 20px 0;
+  padding: 20px 34px 20px 0;
   text-align: left;
   transition: padding 0.4s ease;
   width: 100%;
@@ -577,19 +577,22 @@ figure {
 }
 
 .skill-section.is-open .skill-toggle {
-  padding: 35px 0 20px 0;
+  padding: 35px 34px 20px 0;
 }
 
-.skill-chevron {
+/* Pinned to the collapsed header's center line so it never moves, only rotates */
+.skill-section .skill-chevron {
   color: #444;
-  flex: 0 0 auto;
   font-size: 18px;
-  margin-left: 16px;
+  position: absolute;
+  right: 35px;
+  top: 37px;
+  transform: translateY(-50%);
   transition: transform 0.4s ease;
 }
 
 .skill-section.is-open .skill-chevron {
-  transform: rotate(180deg);
+  transform: translateY(-50%) rotate(180deg);
 }
 
 .skill-body {
@@ -639,6 +642,7 @@ figure {
   flex: 1 1 auto;
   font-size: 28px;
   font-weight: normal;
+  line-height: 34px;
 }
 
 .skill-list {
@@ -677,14 +681,12 @@ figure {
 }
 
 .front-end-icons img {
-  filter: grayscale(1);
   height: 45px;
   margin: 25px 10px 0 10px;
 }
 
 .node-icon,
 .mongodb-icon {
-  filter: grayscale(1);
   height: 32px;
   margin: 25px 15px 0 15px;
 }
@@ -695,7 +697,6 @@ figure {
 }
 
 .development-icons img {
-  filter: grayscale(1);
   height: 32px;
   margin: 25px 15px 0 15px;
 }
@@ -706,7 +707,6 @@ figure {
 }
 
 .authentication-icons img {
-  filter: grayscale(1);
   height: 45px;
   margin: 20px 15px 0 15px;
 }
@@ -731,11 +731,11 @@ figure {
   }
 
   .skill-toggle {
-    padding: 16px 0;
+    padding: 16px 30px 16px 0;
   }
 
   .skill-section.is-open .skill-toggle {
-    padding: 30px 0 16px 0;
+    padding: 30px 30px 16px 0;
   }
 
   .skill-section.is-open .skill-body-inner {
@@ -744,6 +744,12 @@ figure {
 
   .skill-title {
     font-size: 22px;
+    line-height: 28px;
+  }
+
+  .skill-section .skill-chevron {
+    right: 24px;
+    top: 30px;
   }
 
   .skill-section .skill-toggle .skill-icon {
@@ -793,13 +799,6 @@ figure {
     margin: 15px 0 15px 15px;
   }
 
-  .front-end-icons img,
-  .back-end-icons img,
-  .development-icons img,
-  .authentication-icons img {
-    filter: grayscale(0);
-  }
-
   .front-end-icons img {
     height: 32px;
     margin: 25px 5px 0 5px;
@@ -830,13 +829,6 @@ figure {
 
   .skill-description {
     padding: 10px 0;
-  }
-
-  .front-end-icons img,
-  .back-end-icons img,
-  .development-icons img,
-  .authentication-icons img {
-    filter: grayscale(0);
   }
 }
 
