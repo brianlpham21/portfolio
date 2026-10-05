@@ -696,6 +696,15 @@ figure {
   margin: 25px 15px 0 15px;
 }
 
+.back-end-svg-icon {
+  height: 32px;
+  margin: 25px 15px 0 15px;
+}
+
+.back-end-icons img {
+  vertical-align: middle;
+}
+
 .development-icons img {
   height: 32px;
   margin: 25px 15px 0 15px;
@@ -780,23 +789,13 @@ figure {
     padding: 4px 0;
   }
 
-  .node-icon {
-    display: inline-block;
+  .back-end-icons img {
     height: 24px;
-    margin: 15px 0;
+    margin: 20px 6px 0 6px;
   }
 
-  .mongodb-icon {
-    display: inline-block;
-    height: 24px;
-    margin: 15px 0;
-    margin-bottom: 0;
-  }
-
-  .express-icon {
-    display: inline-block;
+  .back-end-icons .express-icon {
     height: 20px;
-    margin: 15px 0 15px 15px;
   }
 
   .front-end-icons img {
