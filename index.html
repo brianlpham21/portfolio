@@ -546,6 +546,12 @@
         <p class="cw-empty" id="cw-empty-hint">
           Ask a question about my resume, projects, or blog posts — answers are cited back to the source.
         </p>
+        <div class="cw-suggestions" id="cw-suggestions">
+          <button type="button" class="cw-suggestion-btn cw-focusable">How many years of experience do you have?</button>
+          <button type="button" class="cw-suggestion-btn cw-focusable">What's your current role?</button>
+          <button type="button" class="cw-suggestion-btn cw-focusable">What technical skills do you have?</button>
+          <button type="button" class="cw-suggestion-btn cw-focusable">Tell me about a project you're proud of.</button>
+        </div>
       </div>
 
       <div class="cw-credit">
@@ -995,12 +1001,13 @@
           }
         });
 
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
-          var question = input.value.trim();
+        var suggestions = document.getElementById("cw-suggestions");
+
+        function submitQuestion(question) {
           if (!question || isLoading) return;
 
           if (emptyHint) { emptyHint.remove(); }
+          if (suggestions) { suggestions.remove(); }
           addBubble("user", question);
           input.value = "";
           isLoading = true;
@@ -1042,7 +1049,20 @@
               // typing their next question without clicking back into the field.
               input.focus();
             });
+        }
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          submitQuestion(input.value.trim());
         });
+
+        if (suggestions) {
+          suggestions.addEventListener("click", function (e) {
+            var btn = e.target.closest(".cw-suggestion-btn");
+            if (!btn || isLoading) return;
+            submitQuestion(btn.textContent.trim());
+          });
+        }
       }
 
       if (document.readyState === "loading") {
