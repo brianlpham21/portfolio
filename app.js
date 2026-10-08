@@ -164,6 +164,16 @@ if ($(window).width() > 428) {
     $(this).css({'background-color': '#ced2de', 'transition': '0.5s'});
   });
 
+  $('.ai-skill-section').mouseover(function() {
+    $('.ai-skill-icon').css({'filter': 'drop-shadow(0 0 1px #4c4c4c)', 'transition': '0.5s'});
+    $(this).css({'background-color': '#e5e8f7', 'transition': '0.5s'});
+  });
+
+  $('.ai-skill-section').mouseout(function() {
+    $('.ai-skill-icon').css('filter', 'none');
+    $(this).css({'background-color': '#ced2de', 'transition': '0.5s'});
+  });
+
   $('.architecture-skill-section').mouseover(function() {
     $('.architecture-skill-icon').css({'filter': 'drop-shadow(0 0 1px #4c4c4c)', 'transition': '0.5s'});
     $(this).css({'background-color': '#e5e8f7', 'transition': '0.5s'});
