@@ -838,6 +838,138 @@ figure {
   }
 }
 
+/* EXPERIENCE TIMELINE (inside About Me) */
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  list-style: none;
+  margin-bottom: 50px;
+  padding: 0;
+  position: relative;
+}
+
+/* Horizontal line running through the dots */
+.timeline:before {
+  background-color: #444;
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 39px;
+}
+
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0 8px;
+  text-align: center;
+}
+
+.timeline-dates {
+  color: #666;
+  display: block;
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+.timeline-dot {
+  background-color: white;
+  border: 3px solid #444;
+  border-radius: 50%;
+  display: block;
+  height: 16px;
+  margin: 12px auto 20px auto;
+  position: relative;
+  width: 16px;
+}
+
+.timeline-item-current .timeline-dot {
+  background-color: #444;
+  box-shadow: 0 0 0 4px #ced2de;
+}
+
+.timeline-card {
+  background-color: #ced2de;
+  border-radius: 5px;
+  flex: 1;
+  padding: 18px 12px;
+  transition: background-color 0.5s;
+}
+
+.timeline-card:hover {
+  background-color: #e5e8f7;
+}
+
+.timeline-role {
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 24px;
+}
+
+.timeline-company {
+  font-size: 17px;
+  font-weight: lighter;
+  margin-top: 6px;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 900px) {
+  .timeline-item {
+    padding: 0 4px;
+  }
+
+  .timeline-dates {
+    font-size: 12px;
+    letter-spacing: 0;
+  }
+
+  .timeline-role {
+    font-size: 17px;
+    line-height: 21px;
+  }
+
+  .timeline-company {
+    font-size: 15px;
+  }
+}
+
+/* Phones: switch to a vertical timeline */
+@media only screen and (max-width: 575px) {
+  .timeline {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+  }
+
+  .timeline:before {
+    bottom: 0;
+    height: auto;
+    left: 7px;
+    right: auto;
+    top: 0;
+    width: 2px;
+  }
+
+  .timeline-item {
+    padding: 0 0 0 36px;
+    position: relative;
+    text-align: left;
+  }
+
+  .timeline-dot {
+    left: 0;
+    margin: 0;
+    position: absolute;
+    top: 2px;
+  }
+
+  .timeline-card {
+    margin-top: 8px;
+  }
+}
+
 /* ABOUT SECTION */
 
 .about-section-icon {
